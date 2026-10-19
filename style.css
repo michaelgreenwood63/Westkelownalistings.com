@@ -138,7 +138,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink)}
 
 /* ---------- Hero ---------- */
 .hero{
-  position:relative;min-height:100vh;display:flex;align-items:center;
+  position:relative;
+  min-height:100vh;
+  min-height:100dvh;
+  box-sizing:border-box;
+  display:flex;align-items:center;
+  padding:120px 0 180px;
   overflow:hidden;background:var(--ink);
 }
 .hero-bg{
@@ -198,9 +203,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink)}
 .hero-stat .num{font-family:'Fraunces',serif;font-size:clamp(26px,3.4vw,38px);font-weight:600;color:var(--gold-light)}
 .hero-stat .label{font-size:13px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 .scroll-cue{
-  position:absolute;left:50%;bottom:calc(100% - 100vh + 140px);transform:translateX(-50%);
+  position:absolute;left:50%;bottom:130px;transform:translateX(-50%);
   z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;
   color:rgba(255,255,255,.65);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+}
+@media (max-width:860px){
+  .scroll-cue{display:none}
 }
 .scroll-cue .wheel{width:22px;height:36px;border:1.5px solid rgba(255,255,255,.5);border-radius:14px;position:relative}
 .scroll-cue .wheel::after{
@@ -377,9 +385,12 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px clamp(20px,
   .mobile-menu.open{display:flex}
   .split{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr;gap:36px}
-  .hero-stats{gap:28px}
+  .hero{padding:110px 0 220px}
+  .hero-stats{gap:18px 28px;padding:20px clamp(20px,6vw,80px)}
 }
 @media (max-width:520px){
   .footer-top{grid-template-columns:1fr}
   .lead-row{flex-direction:column}
+  .hero{padding:100px 0 260px}
+  .hero-stats{flex-direction:column;gap:14px}
 }
