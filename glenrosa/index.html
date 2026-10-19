@@ -16,6 +16,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <script src="/animations.js" defer></script>
+<script>window.__WK_AREA='glenrosa';</script>
+<script src="/listings.js" defer></script>
 </head>
 <body>
 
@@ -114,26 +116,13 @@
     <div class="section-head center">
       <div class="eyebrow" style="justify-content:center">Active Listings</div>
       <h2 class="section-title">Homes for sale in Glenrosa</h2>
-      <p class="section-sub">Live MLS&reg; data wires into this grid in the next build pass.</p>
+      <p class="section-sub">Updated daily, straight from MLS&reg;.</p>
     </div>
-    <div class="listing-grid" data-reveal-group>
-      <div class="listing-card" data-reveal>
-        <div class="listing-img">
-          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=900&auto=format&fit=crop" alt="Sample listing">
-          <span class="listing-badge">New</span>
-          <div class="listing-price">Sample Listing</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-addr">Sample Address, Glenrosa</div>
-          <div class="listing-loc">West Kelowna, BC</div>
-          <div class="listing-specs">
-            <div class="listing-spec"><strong>3</strong> Beds</div>
-            <div class="listing-spec"><strong>2</strong> Baths</div>
-            <div class="listing-spec"><strong>1,780</strong> Sq Ft</div>
-          </div>
-        </div>
-      </div>
+    <div class="listing-grid" id="listings-container" data-reveal-group>
+      <div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--muted);font-size:14px">Loading listings...</div>
     </div>
+    <div id="listings-pagination"></div>
+    <div class="listings-disclaimer" id="listings-disclaimer" style="display:none;margin-top:24px;text-align:center;font-size:13px;color:var(--muted)"></div>
   </div>
 </section>
 

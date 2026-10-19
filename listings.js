@@ -132,7 +132,10 @@
     var container = document.getElementById('listings-container');
     if (!container) return;
 
-    fetch('/api/listings')
+    var area = window.__WK_AREA;
+    var endpoint = area ? '/api/listings?area=' + encodeURIComponent(area) : '/api/listings';
+
+    fetch(endpoint)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (!data.configured) { container.innerHTML = ''; return; }
