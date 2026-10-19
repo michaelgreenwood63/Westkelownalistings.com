@@ -290,7 +290,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink)}
 }
 .listing-price{position:absolute;bottom:16px;left:16px;color:var(--white);font-family:'Fraunces',serif;font-size:24px;font-weight:600;text-shadow:0 2px 12px rgba(0,0,0,.4)}
 .listing-body{padding:22px 24px}
-.listing-addr{font-weight:700;font-size:15.5px}
+.listing-addr{font-weight:700;font-size:15.5px;color:var(--ink)}
 .listing-loc{font-size:13.5px;color:var(--muted);margin-top:3px}
 .listing-specs{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
 .listing-spec{font-size:13.5px;color:var(--ink-soft)}
