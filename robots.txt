@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /sample-building
+Sitemap: https://westkelownalistings.com/sitemap.xml
