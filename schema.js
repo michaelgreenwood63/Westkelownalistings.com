@@ -69,32 +69,32 @@
       ['How do I get current pricing for a specific neighbourhood?', 'Contact us directly — pricing varies meaningfully street-to-street in West Kelowna, especially between lake-view and non-view properties. We track every neighbourhood on this site closely and can give you a straight read.']
     ],
     '/glenrosa': [
-      ['What schools serve Glenrosa?', 'Glenrosa Elementary (K–5) and Glenrosa Middle (6–8) are both located directly in the neighbourhood, with Mount Boucherie Senior Secondary (9–12) nearby.'],
-      ['Where does Glenrosa sit within West Kelowna?', 'It\'s part of the city\'s southern neighbourhood cluster, alongside Shannon Lake, Smith Creek, and Westbank Centre — bordering the Mount Boucherie area.'],
+      ['What schools serve Glenrosa?', 'École Glenrosa Elementary and Helen Gorman Elementary (both K–5), Glenrosa Middle (6–8), and Mount Boucherie Secondary (9–12) for high school — though Mount Boucherie Secondary is down on Cameron Road elsewhere in the city, so high schoolers commute by bus or transit rather than walking.'],
+      ['Where does Glenrosa sit within West Kelowna?', 'It\'s the southernmost of West Kelowna\'s seven neighbourhoods, west of Highway 97 — not actually near Mount Boucherie itself, though it does have panoramic views of the mountain and Okanagan Lake from its hillside streets.'],
       ['Is Glenrosa an old or new community?', 'Old by Okanagan standards — the City of West Kelowna identifies it as one of several neighbourhoods with roots dating to the early-to-mid 19th century, well before the municipality itself was incorporated in 2007.']
     ],
     '/shannon-lake': [
       ['Is Shannon Lake the only golf course in West Kelowna?', 'It\'s the only 18-hole golf course within the City of West Kelowna, which makes it a genuine draw for golf-oriented buyers looking in the area.'],
-      ['What school serves this neighbourhood?', 'Shannon Lake Elementary (K–5) is located directly in the neighbourhood.'],
-      ['Is Shannon Lake on the Okanagan Lake shoreline?', 'No — it\'s an inland community built around its own, smaller namesake lake, in the southern cluster of West Kelowna neighbourhoods.']
+      ['What school serves this neighbourhood?', 'Shannon Lake Elementary (K–5) sits right in the heart of the neighbourhood on Shannon Lake Road, with Rose Valley Elementary serving the northern border and Constable Neil Bruce Middle at the bottom of the neighbourhood.'],
+      ['Is Shannon Lake on the Okanagan Lake shoreline?', 'No — it\'s an inland community built around its own, smaller namesake lake, west of Highway 97 between Smith Creek and West Kelowna Estates.']
     ],
     '/smith-creek': [
-      ['Is Smith Creek a bigger or smaller community?', 'Smaller and quieter compared to some of its neighbours — it\'s one of West Kelowna\'s officially named southern-cluster neighbourhoods, but without the higher profile of areas like Glenrosa or Shannon Lake.'],
-      ['What\'s nearby if there\'s no major landmark in Smith Creek itself?', 'Everything the rest of southern West Kelowna offers is close by — Westbank Centre\'s shops and services, Glenrosa and Mount Boucherie\'s schools, and Shannon Lake Golf Course, all a short drive away.']
+      ['Is Smith Creek a bigger or smaller community?', 'Smaller and quieter compared to some of its neighbours — it\'s one of West Kelowna\'s officially named neighbourhoods on the west side of Highway 97, but without the higher profile of areas like Glenrosa or Shannon Lake.'],
+      ['What\'s nearby if there\'s no major landmark in Smith Creek itself?', 'Everything the rest of this side of West Kelowna offers is close by — Westbank Centre\'s shops and services, Glenrosa\'s schools, and Shannon Lake Golf Course, all a short drive away.']
     ],
     '/westside-road': [
       ['What is Bear Creek Provincial Park known for?', 'A beach over 400 metres long, about 5 km of hiking trails looping a creek and canyon, and lakeside camping with 145 campsites at peak season — it\'s one of the more visited regional parks in the Okanagan.'],
       ['Is Westside Road close to Westbank Centre?', 'It\'s further out than the city\'s more central neighbourhoods — Westside Road runs north along the lakeshore toward Fintry, so the drive back to Westbank Centre and Highway 97C is longer than from a more central neighbourhood like Lakeview Heights.'],
-      ['Is this officially one neighbourhood or two?', 'The City of West Kelowna names it as a single combined area: "Westside Road/Bear Creek Road," part of the city\'s northern neighbourhood cluster.']
+      ['Is this officially one neighbourhood or two?', 'The City of West Kelowna names it as a single combined area: "Westside Road/Bear Creek Road" — the northernmost of the city\'s seven neighbourhoods, west of Highway 97.']
     ],
     '/westbank-centre': [
-      ['Is Westbank Centre the same as "Westbank"?', 'Closely related, yes. "Westbank" was the historic name for this whole area, dating to a 1902 post office. Westbank Centre is the modern civic/retail core within that original community, and Westbank itself is still listed separately among the city\'s southern-cluster neighbourhoods.'],
+      ['Is Westbank Centre the same as "Westbank"?', 'Closely related, yes. "Westbank" was the historic name for this whole area, dating to a 1902 post office. Westbank Centre is the modern civic/retail core within that original community, and the name is still in everyday use for this stretch west of Highway 97.'],
       ['Why did the area stop being called Westbank?', 'When the municipality incorporated in 2007, residents had to choose a permanent name. In a 2008 vote, "West Kelowna" narrowly beat out "Westbank," 3,841 to 3,675, and the city officially became West Kelowna on January 30, 2009.'],
-      ['What\'s within walking distance?', 'Memorial Park, Westbank Town Centre Park, the Johnson Bentley Memorial Aquatic Centre, and the main retail/dining strip are all right in the core.']
+      ['What\'s within walking distance?', 'Julia\'s Junction inclusive playground, the Johnson Bentley Memorial Aquatic Centre, Glen Canyon Regional Park\'s trails, and the main retail/dining strip along Main Street and Dobbin Road are all right in the core.']
     ],
     '/west-kelowna-estates': [
-      ['Is this neighbourhood on the lake?', 'No — it\'s an inland, elevated residential area in the city\'s northern cluster, a short drive rather than a walk from the Okanagan Lake shoreline.'],
-      ['How does it compare to Lakeview Heights or Westside Road?', 'Both of those neighbourhoods sit closer to the water. West Kelowna Estates trades direct lake proximity for a quieter, more inland setting within the same northern cluster.']
+      ['Is this neighbourhood on the lake?', 'It\'s elevated above the lake rather than right on the shoreline, but it\'s genuinely lake-facing — many properties have sweeping views of Okanagan Lake, Knox Mountain, and the Kelowna skyline across the water.'],
+      ['How does it compare to Lakeview Heights or Westside Road?', 'Lakeview Heights sits closer to the water, on the east side of Highway 97 — a different side of the highway entirely. Westside Road also sits directly on the lakeshore, just further north. West Kelowna Estates trades that direct lake proximity for a quieter, more inland setting on the west side.']
     ],
     '/lakeview-heights': [
       ['Why do homes here cost more than other West Kelowna neighbourhoods?', 'Lake views and elevation. Lakeview Heights sits on the benches directly above Okanagan Lake, and lots with an unobstructed view typically trade at a meaningful premium over the more inland, family-oriented neighbourhoods like Glenrosa or Shannon Lake.'],
