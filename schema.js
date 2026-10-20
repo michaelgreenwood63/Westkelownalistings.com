@@ -50,8 +50,43 @@
     });
   }
 
-  var PAGES = { '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold' };
-  if (PAGES[path]) {
+  var PAGES = {
+    '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold',
+    '/glenrosa': 'Glenrosa', '/shannon-lake': 'Shannon Lake', '/smith-creek': 'Smith Creek',
+    '/lakeview-heights': 'Lakeview Heights', '/westbank-centre': 'Westbank Centre',
+    '/west-kelowna-estates': 'West Kelowna Estates', '/westside-road': 'Westside Road',
+    '/history': 'History', '/blog': 'Blog'
+  };
+  var BLOG_POSTS = {
+    '/blog/west-kelowna-seven-neighbourhoods-compared': "West Kelowna's Seven Neighbourhoods, Compared",
+    '/blog/bear-creek-provincial-park-westside-road-guide': 'Bear Creek Provincial Park: What Westside Road Buyers Should Know'
+  };
+  var BLOG_IMAGES = {
+    '/blog/west-kelowna-seven-neighbourhoods-compared': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&h=630&fit=crop&auto=format',
+    '/blog/bear-creek-provincial-park-westside-road-guide': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&h=630&fit=crop&auto=format'
+  };
+  if (BLOG_POSTS[path]) {
+    inject({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': BLOG_POSTS[path],
+      'url': BASE + path,
+      'image': BLOG_IMAGES[path],
+      'datePublished': '2026-10-19',
+      'dateModified': '2026-10-19',
+      'author': { '@type': 'Organization', 'name': 'Mark Jontz & Associates' },
+      'publisher': { '@type': 'Organization', 'name': 'Mark Jontz & Associates', 'url': BASE }
+    });
+    inject({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'West Kelowna Real Estate', 'item': BASE + '/' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': BASE + '/blog' },
+        { '@type': 'ListItem', 'position': 3, 'name': BLOG_POSTS[path], 'item': BASE + path }
+      ]
+    });
+  } else if (PAGES[path]) {
     inject({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

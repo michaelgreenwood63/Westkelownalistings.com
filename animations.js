@@ -14,6 +14,7 @@
     var m = document.getElementById('mobile-menu');
     if (!m) return;
     m.classList.toggle('open');
+    document.body.classList.toggle('menu-open', m.classList.contains('open'));
   };
 
   // ---------- Hero load-in ----------
