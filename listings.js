@@ -52,8 +52,9 @@
       ? '<img src="' + photo.replace(/"/g, '&quot;') + '" alt="' + addr.replace(/"/g, '&quot;') + '" loading="lazy">'
       : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;background:var(--cream-deep)">No Photo Available</div>';
     var key = l.ListingKey || l.ListingId;
+    var url = l.ListingURL || '';
 
-    return '<div class="listing-card" data-key="' + key + '" data-proptype="' + structureType(l) + '" style="cursor:pointer">' +
+    return '<div class="listing-card" data-key="' + key + '" data-url="' + url.replace(/"/g, '&quot;') + '" data-proptype="' + structureType(l) + '"' + (url ? ' style="cursor:pointer"' : '') + '>' +
       '<div class="listing-img">' + imgHtml +
         '<span class="listing-badge">' + typeLabel + '</span>' +
         '<div class="listing-price">' + formatPrice(l.ListPrice) + '</div>' +
@@ -66,7 +67,12 @@
           (l.BathroomsTotalInteger ? '<div class="listing-spec"><strong>' + l.BathroomsTotalInteger + '</strong> Baths</div>' : '') +
           (l.LivingArea ? '<div class="listing-spec"><strong>' + Math.round(l.LivingArea).toLocaleString() + '</strong> Sq Ft</div>' : '') +
         '</div>' +
-        (mls ? '<div style="margin-top:12px;font-size:12px;color:var(--muted)">' + mls + '</div>' : '') +
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px">' +
+          (mls ? '<span style="font-size:12px;color:var(--muted)">' + mls + '</span>' : '<span></span>') +
+          (url
+            ? '<a href="' + url.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:13px;font-weight:700;color:var(--gold-dark);white-space:nowrap">View Listing &rarr;</a>'
+            : '<a href="/contact" onclick="event.stopPropagation()" style="font-size:13px;font-weight:700;color:var(--gold-dark);white-space:nowrap">Request Info &rarr;</a>') +
+        '</div>' +
       '</div>' +
     '</div>';
   }
@@ -100,9 +106,11 @@
     var pageListings = filtered.slice(start, start + PER_PAGE);
     container.innerHTML = pageListings.map(renderCard).join('');
 
-    container.querySelectorAll('.listing-card[data-key]').forEach(function (card) {
+    container.querySelectorAll('.listing-card[data-url]').forEach(function (card) {
+      var url = card.getAttribute('data-url');
+      if (!url) return;
       card.addEventListener('click', function () {
-        window.location.href = '/contact';
+        window.open(url, '_blank', 'noopener');
       });
     });
 
