@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listing Details | West Kelowna Listings</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.ld-loading,.ld-error{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:40px 20px}
+.ld-loading{color:var(--muted);font-size:15px}
+.ld-error h2{font-family:'Fraunces',serif;font-size:24px;color:var(--ink)}
+.ld-error p{color:var(--muted);font-size:14px}
+.ld-error a{color:var(--gold-dark);font-weight:700}
+
+.ld-gallery{background:var(--ink);position:relative;height:460px;overflow:hidden}
+.ld-gallery-track{display:flex;height:100%;transition:transform .4s var(--ease)}
+.ld-gallery-slide{flex-shrink:0;width:100%;height:100%;background:center/cover no-repeat var(--ink)}
+.ld-gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:none;color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.ld-gallery-btn:hover{background:rgba(0,0,0,.8)}
+.ld-gallery-prev{left:16px}
+.ld-gallery-next{right:16px}
+.ld-gallery-counter{position:absolute;bottom:16px;right:20px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px}
+.ld-thumbs{display:flex;gap:6px;padding:10px 0;overflow-x:auto;background:var(--cream-deep);border-bottom:1px solid var(--border)}
+.ld-thumb{flex-shrink:0;width:86px;height:58px;background:center/cover no-repeat var(--border);border-radius:6px;cursor:pointer;border:2px solid transparent;opacity:.65;transition:opacity .15s,border-color .15s}
+.ld-thumb:first-child{margin-left:20px}
+.ld-thumb:last-child{margin-right:20px}
+.ld-thumb.active,.ld-thumb:hover{border-color:var(--gold);opacity:1}
+
+.ld-wrap{max-width:1140px;margin:0 auto;padding:44px 24px 90px;display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start}
+@media(max-width:860px){.ld-wrap{grid-template-columns:1fr;gap:36px}.ld-gallery{height:280px}}
+
+.ld-breadcrumb{font-size:12px;color:var(--muted);margin-bottom:22px}
+.ld-breadcrumb a{color:var(--muted)}
+.ld-breadcrumb a:hover{color:var(--gold-dark)}
+.ld-price{font-family:'Fraunces',serif;font-size:34px;font-weight:600;color:var(--gold-dark);margin-bottom:6px}
+.ld-address{font-size:21px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ld-location{font-size:13.5px;color:var(--muted);margin-bottom:8px}
+.ld-type-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);background:var(--cream-deep);padding:5px 12px;border-radius:999px;margin-bottom:24px}
+.ld-chips{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.ld-chip{background:var(--cream-deep);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 18px}
+.ld-chip-val{font-size:16px;font-weight:700;color:var(--ink)}
+.ld-chip-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:2px}
+
+.ld-section{margin-bottom:38px}
+.ld-section-title{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.ld-facts{width:100%;border-collapse:collapse}
+.ld-facts tr{border-bottom:1px solid var(--border)}
+.ld-facts tr:last-child{border-bottom:none}
+.ld-facts td{padding:11px 0;font-size:13.5px;vertical-align:top}
+.ld-facts td:first-child{color:var(--muted);font-weight:600;width:50%;padding-right:12px}
+.ld-facts td:last-child{color:var(--ink);font-weight:700}
+.ld-desc{font-size:14.5px;line-height:1.85;color:var(--ink-soft)}
+.ld-desc-more{background:none;border:none;color:var(--gold-dark);font-weight:700;font-size:14px;cursor:pointer;padding:0;margin-top:8px;display:block;font-family:inherit}
+
+.ld-sidebar{position:sticky;top:24px}
+.ld-contact-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+.ld-contact-header{background:var(--ink);padding:22px 24px}
+.ld-contact-header-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(250,246,239,.6);margin-bottom:4px}
+.ld-contact-header-price{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--gold-light)}
+.ld-contact-header-addr{font-size:12.5px;color:rgba(250,246,239,.78);margin-top:3px}
+.ld-contact-body{padding:26px}
+.ld-agent-row{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.ld-agent-avatar{width:46px;height:46px;border-radius:50%;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--gold-dark);flex-shrink:0}
+.ld-agent-name{font-size:14.5px;font-weight:700;color:var(--ink)}
+.ld-agent-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.ld-contact-form .form-group{margin-bottom:12px}
+.ld-contact-form label{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:5px}
+.ld-contact-form input,.ld-contact-form textarea{width:100%;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-size:13.5px;font-family:inherit;color:var(--ink);background:var(--cream-deep)}
+.ld-contact-form input:focus,.ld-contact-form textarea:focus{outline:none;border-color:var(--gold)}
+.ld-contact-form textarea{resize:vertical;min-height:76px}
+.ld-contact-submit{width:100%;background:var(--gold);color:var(--ink);border:none;border-radius:999px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px}
+.ld-contact-submit:hover{box-shadow:0 10px 24px rgba(198,144,63,.4)}
+.ld-contact-links{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.ld-contact-link{display:flex;align-items:center;gap:10px;color:var(--ink-soft);font-size:13.5px;font-weight:600}
+.ld-contact-link:hover{color:var(--gold-dark)}
+.ld-mls-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.ld-mls-note a{color:var(--gold-dark);font-weight:700}
+.ld-form-success{display:none;margin-bottom:14px;padding:12px;background:rgba(198,144,63,.12);border:1px solid rgba(198,144,63,.35);border-radius:var(--radius-sm);color:var(--gold-dark);font-weight:700;font-size:13px;text-align:center}
+</style>
+<script src="/animations.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">WEST KELOWNA<span>LISTINGS</span></a>
+  <div class="nav-links">
+    <a href="/#neighbourhoods">Neighbourhoods</a>
+    <a href="/#listings">Listings</a>
+    <a href="/history">History</a>
+    <a href="/blog">Blog</a>
+    <a href="/team">Our Team</a>
+    <a href="/contact">Contact</a>
+    <a href="/#seller" class="nav-cta">Free Evaluation</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#neighbourhoods" onclick="toggleMenu()">Neighbourhoods</a>
+  <a href="/#listings" onclick="toggleMenu()">Listings</a>
+  <a href="/history" onclick="toggleMenu()">History</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
+  <a href="/team" onclick="toggleMenu()">Our Team</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="/#seller" onclick="toggleMenu()">Free Evaluation</a>
+</div>
+
+<div style="height:84px"></div>
+
+<div id="ld-root">
+  <div class="ld-loading">Loading listing&hellip;</div>
+</div>
+
+<section class="lead-section" id="seller">
+  <div class="lead-inner">
+    <div class="eyebrow" style="justify-content:center">Thinking of Selling in This Area?</div>
+    <h2 class="section-title">What's your West Kelowna property worth?</h2>
+    <p class="section-sub">Most buyers are also sellers. Find out what your home is worth &mdash; no pressure, no obligation.</p>
+    <div style="margin-top:28px">
+      <a href="/contact" class="btn btn-gold">Get Your Free Evaluation &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">WEST KELOWNA<span>LISTINGS</span></div>
+      <p class="footer-desc">West Kelowna's dedicated real estate resource. Powered by <a href="https://www.markjontz.com" style="color:var(--gold-light)">Mark Jontz &amp; Associates</a> at Royal LePage Kelowna.</p>
+      <p class="footer-desc" style="margin-top:14px">Searching in Kelowna? <a href="https://kelownalistings.com" style="color:var(--gold-light);font-weight:700">Visit KelownaListings.com &rarr;</a></p>
+    </div>
+    <div>
+      <div class="footer-heading">Neighbourhoods</div>
+      <ul class="footer-links">
+        <li><a href="/glenrosa">Glenrosa</a></li>
+        <li><a href="/shannon-lake">Shannon Lake</a></li>
+        <li><a href="/smith-creek">Smith Creek</a></li>
+        <li><a href="/lakeview-heights">Lakeview Heights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">More Neighbourhoods</div>
+      <ul class="footer-links">
+        <li><a href="/westbank-centre">Westbank Centre</a></li>
+        <li><a href="/west-kelowna-estates">West Kelowna Estates</a></li>
+        <li><a href="/westside-road">Westside Road</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:12508616002">250-861-6002</a></li>
+        <li><a href="mailto:info@markjontz.com">info@markjontz.com</a></li>
+        <li><a href="/team">Our Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mark Jontz &amp; Associates | Royal LePage Kelowna. All rights reserved.</p>
+    <p style="margin-top:6px">The trademarks MLS&reg;, Multiple Listing Service&reg; and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.getElementById('ld-root');
+
+  function fmt(n) {
+    if (!n) return null;
+    return '$' + Number(n).toLocaleString('en-CA', { maximumFractionDigits: 0 });
+  }
+
+  function dom(dateStr) {
+    if (!dateStr) return null;
+    var d = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000);
+    return d <= 0 ? 'Listed today' : d + ' days';
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function chip(val, lbl) {
+    return '<div class="ld-chip"><div class="ld-chip-val">' + esc(String(val)) + '</div><div class="ld-chip-lbl">' + lbl + '</div></div>';
+  }
+
+  function render(l, key) {
+    var photos = (l.Media || []).slice().sort(function(a,b){return(a.Order||0)-(b.Order||0);});
+    var unit   = l.UnitNumber ? 'Unit ' + l.UnitNumber + ' — ' : '';
+    var addr   = unit + (l.StreetNumber||'') + ' ' + (l.StreetName||'') + ' ' + (l.StreetSuffix||'');
+    var city   = [l.City, l.StateOrProvince, l.PostalCode].filter(Boolean).join(', ');
+
+    var chips = '';
+    if (l.BedroomsTotal)         chips += chip(l.BedroomsTotal, 'Bedrooms');
+    if (l.BathroomsTotalInteger) chips += chip(l.BathroomsTotalInteger, 'Bathrooms');
+    if (l.ParkingTotal)          chips += chip(l.ParkingTotal, 'Parking');
+    if (l.LivingArea)            chips += chip(Math.round(l.LivingArea).toLocaleString() + ' ft²', 'Living Area');
+
+    var facts = [];
+    if (l.PropertySubType || l.StructureType) facts.push(['Property Type', l.PropertySubType || l.StructureType]);
+    if (l.LivingArea)             facts.push(['Size', Math.round(l.LivingArea).toLocaleString() + ' sq ft']);
+    if (l.YearBuilt)              facts.push(['Year Built', l.YearBuilt]);
+    if (l.Stories)                facts.push(['Stories', l.Stories]);
+    if (l.ParkingTotal)           facts.push(['Parking', l.ParkingTotal + (l.ParkingFeatures ? ' — ' + l.ParkingFeatures : '')]);
+    if (l.Basement)               facts.push(['Basement', l.Basement]);
+    if (l.Heating)                facts.push(['Heating', l.Heating]);
+    if (l.Cooling)                facts.push(['Cooling', l.Cooling]);
+    if (l.FireplaceYN)            facts.push(['Fireplace', l.FireplacesTotal ? l.FireplacesTotal : 'Yes']);
+    if (l.AssociationFee)         facts.push(['Maintenance Fee', fmt(l.AssociationFee) + (l.AssociationFeeFrequency ? ' / ' + l.AssociationFeeFrequency.toLowerCase() : '/mo')]);
+    if (l.AssociationFeeIncludes) facts.push(['Fee Includes', Array.isArray(l.AssociationFeeIncludes) ? l.AssociationFeeIncludes.join(', ') : l.AssociationFeeIncludes]);
+    if (l.TaxAnnualAmount)        facts.push(['Annual Taxes', fmt(l.TaxAnnualAmount) + (l.TaxYear ? ' (' + l.TaxYear + ')' : '')]);
+    if (l.ListingId)              facts.push(['MLS® Number', l.ListingId]);
+    facts.push(['Listed', dom(l.OriginalEntryTimestamp) ? dom(l.OriginalEntryTimestamp) + ' ago' : '—']);
+    if (l.ListOfficeName)         facts.push(['Listing Office', l.ListOfficeName]);
+
+    var factsHtml = facts.map(function(r){
+      return '<tr><td>' + esc(r[0]) + '</td><td>' + esc(String(r[1])) + '</td></tr>';
+    }).join('');
+
+    var desc = l.PublicRemarks || '';
+    var descHtml = '';
+    if (desc) {
+      if (desc.length > 320) {
+        descHtml = '<p class="ld-desc" id="ld-desc-short">' + esc(desc.slice(0, 320)) + '… <button class="ld-desc-more" onclick="expandDesc()">Read more</button></p>' +
+                   '<p class="ld-desc" id="ld-desc-full" style="display:none">' + esc(desc) + ' <button class="ld-desc-more" onclick="collapseDesc()">Show less</button></p>';
+      } else {
+        descHtml = '<p class="ld-desc">' + esc(desc) + '</p>';
+      }
+    }
+
+    var thumbsHtml = photos.length > 1 ? '<div class="ld-thumbs" id="ld-thumbs">' +
+      photos.map(function(p, i){
+        return '<div class="ld-thumb' + (i===0?' active':'') + '" style="background-image:url(\'' + esc(p.MediaURL||'') + '\')" data-idx="' + i + '" onclick="goSlide(' + i + ')"></div>';
+      }).join('') + '</div>' : '';
+
+    var slidesHtml = photos.length
+      ? photos.map(function(p){ return '<div class="ld-gallery-slide" style="background-image:url(\'' + esc(p.MediaURL||'') + '\')"></div>'; }).join('')
+      : '<div class="ld-gallery-slide" style="display:flex;align-items:center;justify-content:center"><span style="color:rgba(250,246,239,.35);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em">No Photos Available</span></div>';
+
+    var breadcrumb = '<div class="ld-breadcrumb"><a href="/">West Kelowna Listings</a> / ' + esc(addr.trim()) + '</div>';
+
+    root.innerHTML =
+      '<div class="ld-gallery">' +
+        '<div class="ld-gallery-track" id="ld-track">' + slidesHtml + '</div>' +
+        (photos.length > 1 ? '<button class="ld-gallery-btn ld-gallery-prev" onclick="goSlide(window._ldIdx-1)">&#8592;</button>' +
+          '<button class="ld-gallery-btn ld-gallery-next" onclick="goSlide(window._ldIdx+1)">&#8594;</button>' +
+          '<div class="ld-gallery-counter" id="ld-counter">1 / ' + photos.length + '</div>' : '') +
+      '</div>' +
+      thumbsHtml +
+      '<div class="ld-wrap">' +
+        '<div class="ld-main">' +
+          breadcrumb +
+          '<div class="ld-price">' + (fmt(l.ListPrice) || 'Price on Request') + '</div>' +
+          '<div class="ld-address">' + esc(addr.trim()) + '</div>' +
+          '<div class="ld-location">' + esc(city) + '</div>' +
+          ((l.PropertySubType||l.StructureType) ? '<div class="ld-type-badge">' + esc(l.PropertySubType||l.StructureType) + '</div>' : '') +
+          (chips ? '<div class="ld-chips">' + chips + '</div>' : '') +
+          (desc ? '<div class="ld-section"><div class="ld-section-title">Description</div>' + descHtml + '</div>' : '') +
+          '<div class="ld-section"><div class="ld-section-title">Property Details</div><table class="ld-facts"><tbody>' + factsHtml + '</tbody></table></div>' +
+        '</div>' +
+        '<div class="ld-sidebar">' +
+          '<div class="ld-contact-card">' +
+            '<div class="ld-contact-header">' +
+              '<div class="ld-contact-header-title">Listed at</div>' +
+              '<div class="ld-contact-header-price">' + (fmt(l.ListPrice)||'Contact for price') + '</div>' +
+              '<div class="ld-contact-header-addr">' + esc(addr.trim()) + '</div>' +
+            '</div>' +
+            '<div class="ld-contact-body">' +
+              '<div class="ld-agent-row">' +
+                '<div class="ld-agent-avatar">MJ</div>' +
+                '<div><div class="ld-agent-name">Mark Jontz</div><div class="ld-agent-title">REALTOR&reg; &middot; Royal LePage Kelowna</div></div>' +
+              '</div>' +
+              '<div class="ld-form-success" id="ld-form-success">&#10003; Sent &mdash; we\'ll be in touch shortly.</div>' +
+              '<div class="ld-form-error" style="display:none;margin-bottom:14px;color:#b3443f;font-size:13px;text-align:center" id="ld-form-error">Something went wrong. Please call <a href="tel:12508616002" style="color:var(--gold-dark)">250-861-6002</a>.</div>' +
+              '<form class="ld-contact-form" id="ld-contact-form" action="https://formspree.io/f/mppqgrro" method="POST">' +
+                '<input type="hidden" name="_subject" value="Listing Inquiry — ' + esc(addr.trim()) + '">' +
+                '<input type="hidden" name="listing" value="' + esc(addr.trim()) + ' · MLS® ' + esc(l.ListingId||'') + '">' +
+                '<div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>' +
+                '<div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>' +
+                '<div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="250-555-0100"></div>' +
+                '<div class="form-group"><label>Message</label><textarea name="message" rows="3" placeholder="I\'d like more info about this property…"></textarea></div>' +
+                '<button type="submit" class="ld-contact-submit">Request Info &rarr;</button>' +
+              '</form>' +
+              '<div class="ld-contact-links">' +
+                '<a href="tel:12508616002" class="ld-contact-link">250-861-6002</a>' +
+                '<a href="mailto:info@markjontz.com" class="ld-contact-link">info@markjontz.com</a>' +
+              '</div>' +
+              '<div class="ld-mls-note">' +
+                (l.ListOfficeName ? 'Listing courtesy of ' + esc(l.ListOfficeName) + '. ' : '') +
+                'MLS&reg; data provided by CREA DDF&reg;. The trademarks REALTOR&reg;, MLS&reg;, and REALTORS&reg; are controlled by CREA.' +
+                (l.ListingURL ? ' <a href="' + esc(l.ListingURL) + '" target="_blank" rel="noopener">View on realtor.ca &rarr;</a>' : '') +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    window._ldPhotos = photos;
+    window._ldIdx    = 0;
+
+    var formEl = document.getElementById('ld-contact-form');
+    if (formEl) {
+      formEl.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(formEl);
+        fetch(formEl.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+          .then(function (res) {
+            if (res.ok) {
+              formEl.style.display = 'none';
+              document.getElementById('ld-form-success').style.display = 'block';
+            } else {
+              throw new Error('bad response');
+            }
+          })
+          .catch(function () {
+            document.getElementById('ld-form-error').style.display = 'block';
+          });
+      });
+    }
+  }
+
+  window.goSlide = function(idx) {
+    var photos = window._ldPhotos || [];
+    if (!photos.length) return;
+    idx = ((idx % photos.length) + photos.length) % photos.length;
+    window._ldIdx = idx;
+    var track = document.getElementById('ld-track');
+    if (track) track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    var counter = document.getElementById('ld-counter');
+    if (counter) counter.textContent = (idx + 1) + ' / ' + photos.length;
+    document.querySelectorAll('.ld-thumb').forEach(function(t, i){ t.classList.toggle('active', i === idx); });
+  };
+
+  window.expandDesc   = function(){ document.getElementById('ld-desc-short').style.display='none'; document.getElementById('ld-desc-full').style.display=''; };
+  window.collapseDesc = function(){ document.getElementById('ld-desc-full').style.display='none'; document.getElementById('ld-desc-short').style.display=''; };
+
+  var params = new URLSearchParams(window.location.search);
+  var key    = params.get('id');
+
+  if (!key) {
+    root.innerHTML = '<div class="ld-error"><h2>No listing specified</h2><p><a href="/">&larr; Back to West Kelowna listings</a></p></div>';
+  } else {
+    fetch('/api/listing?key=' + encodeURIComponent(key))
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        if (!data.configured) {
+          root.innerHTML = '<div class="ld-error"><h2>Listings unavailable</h2><p><a href="/contact">Contact us directly &rarr;</a></p></div>';
+          return;
+        }
+        if (data.error || !data.listing) {
+          root.innerHTML = '<div class="ld-error"><h2>Listing not found</h2><p>It may have sold or been removed.</p><p><a href="/">&larr; Browse all listings</a></p></div>';
+          return;
+        }
+        var l = data.listing;
+        var titleAddr = (l.UnitNumber ? 'Unit ' + l.UnitNumber + ' — ' : '') + (l.StreetNumber||'') + ' ' + (l.StreetName||'') + ' ' + (l.StreetSuffix||'');
+        document.title = titleAddr.trim() + ' | West Kelowna Listings';
+        render(l, key);
+      })
+      .catch(function(){
+        root.innerHTML = '<div class="ld-error"><h2>Something went wrong</h2><p><a href="/contact">Contact us directly &rarr;</a></p></div>';
+      });
+  }
+})();
+function toggleMenu(){var m=document.getElementById('mobile-menu');m.classList.toggle('open');}
+</script>
+</body>
+</html>
