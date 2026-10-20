@@ -50,7 +50,7 @@
     });
   }
 
-  var PAGES = { '/contact': 'Contact', '/team': 'Our Team' };
+  var PAGES = { '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold' };
   if (PAGES[path]) {
     inject({
       '@context': 'https://schema.org',
@@ -100,6 +100,12 @@
       ['Why do homes here cost more than other West Kelowna neighbourhoods?', 'Lake views and elevation. Lakeview Heights sits on the benches directly above Okanagan Lake, and lots with an unobstructed view typically trade at a meaningful premium over the more inland, family-oriented neighbourhoods like Glenrosa or Shannon Lake.'],
       ['Are there wineries actually in the neighbourhood?', 'Yes — several working wineries are woven directly into the residential streets of Lakeview Heights, which is part of what gives the area its character and tourist draw.'],
       ['How old is this neighbourhood?', 'Lakeview Heights is one of a small number of West Kelowna neighbourhoods with roots dating to the early-to-mid 19th century, long before the city\'s 2007 incorporation.']
+    ],
+    '/wfn-leasehold': [
+      ['Do I pay BC Property Transfer Tax on a WFN leasehold purchase?', 'No — because the transfer is registered through the WFN Land Registry rather than the BC Land Title Office, almost all WFN land lease transfers are exempt from BC Property Transfer Tax, saving buyers thousands upfront.'],
+      ['Can I get a regular mortgage on a WFN leasehold home?', 'Usually yes, if the lease has a long term remaining — major Canadian banks routinely finance pre-paid 99-year WFN leases with standard rates and down payment rules. Financing gets more restrictive once the remaining term drops below roughly 35-50 years.'],
+      ['What happens when the 99-year lease runs out?', 'In theory, head leases can be renegotiated and extended back toward 99 years between the WFN landholder and the homeowner association, with a fair financial agreement for the remaining valuation. This isn\'t automatic, though, and should be confirmed for any specific property rather than assumed.'],
+      ['Is a WFN strata the same as a regular BC strata?', 'No — WFN multi-family developments typically operate under a Society or Homeowners Corporation rather than a BC Strata Corporation under the Strata Property Act. The day-to-day function (fees, common area management, bylaws) is similar, but the legal structure is different.']
     ]
   };
 
