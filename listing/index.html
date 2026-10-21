@@ -119,7 +119,7 @@
   <div class="lead-inner">
     <div class="eyebrow" style="justify-content:center">Thinking of Selling in This Area?</div>
     <h2 class="section-title">What's your West Kelowna property worth?</h2>
-    <p class="section-sub">Most buyers are also sellers. Find out what your home is worth &mdash; no pressure, no obligation.</p>
+    <p class="section-sub">Most buyers are also sellers. Find out what your home is worth, no pressure, no obligation.</p>
     <div style="margin-top:28px">
       <a href="/contact" class="btn btn-gold">Get Your Free Evaluation &rarr;</a>
     </div>
@@ -191,7 +191,7 @@
 
   function render(l, key) {
     var photos = (l.Media || []).slice().sort(function(a,b){return(a.Order||0)-(b.Order||0);});
-    var unit   = l.UnitNumber ? 'Unit ' + l.UnitNumber + ' — ' : '';
+    var unit   = l.UnitNumber ? 'Unit ' + l.UnitNumber + ', ' : '';
     var addr   = unit + (l.StreetNumber||'') + ' ' + (l.StreetName||'') + ' ' + (l.StreetSuffix||'');
     var city   = [l.City, l.StateOrProvince, l.PostalCode].filter(Boolean).join(', ');
 
@@ -206,7 +206,7 @@
     if (l.LivingArea)             facts.push(['Size', Math.round(l.LivingArea).toLocaleString() + ' sq ft']);
     if (l.YearBuilt)              facts.push(['Year Built', l.YearBuilt]);
     if (l.Stories)                facts.push(['Stories', l.Stories]);
-    if (l.ParkingTotal)           facts.push(['Parking', l.ParkingTotal + (l.ParkingFeatures ? ' — ' + l.ParkingFeatures : '')]);
+    if (l.ParkingTotal)           facts.push(['Parking', l.ParkingTotal + (l.ParkingFeatures ? ', ' + l.ParkingFeatures : '')]);
     if (l.Basement)               facts.push(['Basement', l.Basement]);
     if (l.Heating)                facts.push(['Heating', l.Heating]);
     if (l.Cooling)                facts.push(['Cooling', l.Cooling]);
@@ -275,10 +275,10 @@
                 '<div class="ld-agent-avatar">MJ</div>' +
                 '<div><div class="ld-agent-name">Mark Jontz</div><div class="ld-agent-title">REALTOR&reg; &middot; Royal LePage Kelowna</div></div>' +
               '</div>' +
-              '<div class="ld-form-success" id="ld-form-success">&#10003; Sent &mdash; we\'ll be in touch shortly.</div>' +
+              '<div class="ld-form-success" id="ld-form-success">&#10003; Sent. We\'ll be in touch shortly.</div>' +
               '<div class="ld-form-error" style="display:none;margin-bottom:14px;color:#b3443f;font-size:13px;text-align:center" id="ld-form-error">Something went wrong. Please call <a href="tel:12508616002" style="color:var(--gold-dark)">250-861-6002</a>.</div>' +
               '<form class="ld-contact-form" id="ld-contact-form" action="https://formspree.io/f/mppqgrro" method="POST">' +
-                '<input type="hidden" name="_subject" value="Listing Inquiry — ' + esc(addr.trim()) + '">' +
+                '<input type="hidden" name="_subject" value="Listing Inquiry: ' + esc(addr.trim()) + '">' +
                 '<input type="hidden" name="listing" value="' + esc(addr.trim()) + ' · MLS® ' + esc(l.ListingId||'') + '">' +
                 '<div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>' +
                 '<div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>' +
@@ -357,7 +357,7 @@
           return;
         }
         var l = data.listing;
-        var titleAddr = (l.UnitNumber ? 'Unit ' + l.UnitNumber + ' — ' : '') + (l.StreetNumber||'') + ' ' + (l.StreetName||'') + ' ' + (l.StreetSuffix||'');
+        var titleAddr = (l.UnitNumber ? 'Unit ' + l.UnitNumber + ', ' : '') + (l.StreetNumber||'') + ' ' + (l.StreetName||'') + ' ' + (l.StreetSuffix||'');
         document.title = titleAddr.trim() + ' | West Kelowna Listings';
         render(l, key);
       })
