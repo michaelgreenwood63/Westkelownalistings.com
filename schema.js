@@ -55,7 +55,11 @@
     '/glenrosa': 'Glenrosa', '/shannon-lake': 'Shannon Lake', '/smith-creek': 'Smith Creek',
     '/lakeview-heights': 'Lakeview Heights', '/westbank-centre': 'Westbank Centre',
     '/west-kelowna-estates': 'West Kelowna Estates', '/westside-road': 'Westside Road',
-    '/history': 'History', '/blog': 'Blog'
+    '/history': 'History', '/blog': 'Blog',
+    '/calculators': 'Calculators', '/calculators/mortgage': 'Mortgage Calculator',
+    '/calculators/affordability': 'Affordability Calculator', '/calculators/land-transfer-tax': 'Property Transfer Tax Calculator',
+    '/calculators/rent-vs-buy': 'Rent vs. Buy Calculator', '/calculators/net-proceeds': 'Net Proceeds Calculator',
+    '/quiz': 'Neighbourhood Quiz'
   };
   var BLOG_POSTS = {
     '/blog/west-kelowna-seven-neighbourhoods-compared': "West Kelowna's Seven Neighbourhoods, Compared",

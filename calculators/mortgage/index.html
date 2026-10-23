@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Payment Calculator (Canada) | West Kelowna Listings</title>
+<meta name="description" content="Calculate your Canadian mortgage payment with accurate semi-annual compounding, CMHC insurance, and minimum down payment, built for West Kelowna, BC buyers.">
+<link rel="canonical" href="https://westkelownalistings.com/calculators/mortgage">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Mortgage Payment Calculator (Canada) | West Kelowna Listings">
+<meta property="og:description" content="Calculate your Canadian mortgage payment with accurate semi-annual compounding and CMHC insurance.">
+<meta property="og:url" content="https://westkelownalistings.com/calculators/mortgage">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Payment Calculator (Canada) | West Kelowna Listings">
+<meta name="twitter:description" content="Calculate your Canadian mortgage payment with accurate semi-annual compounding and CMHC insurance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/schema.js" defer></script>
+<script src="/animations.js" defer></script>
+<style>
+.calc-wrap{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}}
+.calc-form{background:var(--cream-deep);border:1px solid var(--border);border-radius:var(--radius);padding:30px}
+.calc-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:7px}
+.calc-input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:15px;font-family:inherit;color:var(--ink);margin-bottom:18px}
+.calc-input:focus{outline:none;border-color:var(--gold)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.calc-toggle{display:flex;gap:8px;margin-bottom:18px}
+.calc-toggle button{flex:1;padding:10px;border:1.5px solid var(--border);background:#fff;border-radius:var(--radius-sm);font-weight:700;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.calc-toggle button.active{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.calc-radio-group{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.calc-radio-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer}
+.calc-radio-option input{margin-top:3px}
+.calc-radio-option .rt{font-weight:700;font-size:14px;color:var(--ink)}
+.calc-radio-option .rd{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.5}
+.calc-checkbox-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer;margin-bottom:8px}
+.calc-checkbox-option input{margin-top:3px}
+.calc-section-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 14px;padding-top:18px;border-top:1px solid var(--border);font-family:'Fraunces',serif}
+.calc-section-label:first-child{margin-top:0;padding-top:0;border-top:none}
+.calc-hint{font-size:12px;color:var(--muted);margin-top:-12px;margin-bottom:18px;line-height:1.5}
+.calc-results{background:var(--ink);color:#fff;border-radius:var(--radius);padding:32px;position:sticky;top:90px;box-shadow:var(--shadow-md)}
+.calc-result-main{text-align:center;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:20px}
+.calc-result-main .num{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--gold-light)}
+.calc-result-main .lbl{font-size:12px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.calc-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.calc-compare-card{background:rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.calc-compare-card .v{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#fff}
+.calc-compare-card .k{font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.calc-result-row{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.calc-result-row .k{color:rgba(255,255,255,.6)}
+.calc-result-row .v{font-weight:700}
+.calc-result-row.total{border-top:1.5px solid rgba(255,255,255,.25);border-bottom:none;margin-top:6px;padding-top:14px;font-size:15px}
+.calc-warning{background:rgba(198,144,63,.18);border:1px solid var(--gold);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;margin-top:16px;color:#fff}
+.calc-note{font-size:11px;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.65}
+.calc-faq details{border-bottom:1px solid var(--border);padding:18px 0}
+.calc-faq summary{font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;list-style:none;font-family:'Fraunces',serif}
+.calc-faq summary::-webkit-details-marker{display:none}
+.calc-faq .a{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.75}
+.tools-grid{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:block;box-shadow:var(--shadow-sm)}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.tool-icon{font-size:28px;margin-bottom:14px}
+.tool-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.tool-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.tool-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--cream-deep);color:var(--muted);padding:4px 11px;border-radius:999px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">WEST KELOWNA<span>LISTINGS</span></a>
+  <div class="nav-links">
+    <a href="/#neighbourhoods">Neighbourhoods</a>
+    <a href="/#listings">Listings</a>
+    <a href="/wfn-leasehold">WFN Leasehold</a>
+    <a href="/calculators" class="active">Calculators</a>
+    <a href="/quiz">Quiz</a>
+    <a href="/history">History</a>
+    <a href="/blog">Blog</a>
+    <a href="/team">Our Team</a>
+    <a href="/contact">Contact</a>
+    <a href="/#seller" class="nav-cta">Free Evaluation</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#neighbourhoods" onclick="toggleMenu()">Neighbourhoods</a>
+  <a href="/#listings" onclick="toggleMenu()">Listings</a>
+  <a href="/wfn-leasehold" onclick="toggleMenu()">WFN Leasehold</a>
+  <a href="/calculators" onclick="toggleMenu()">Calculators</a>
+  <a href="/quiz" onclick="toggleMenu()">Quiz</a>
+  <a href="/history" onclick="toggleMenu()">History</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
+  <a href="/team" onclick="toggleMenu()">Our Team</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="/#seller" onclick="toggleMenu()">Free Evaluation</a>
+</div>
+
+<div class="page-header" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop');min-height:40vh">
+  <div class="hero-scrim"></div>
+  <div class="page-header-inner">
+    <div class="hero-eyebrow"><a href="/calculators" style="color:rgba(255,255,255,.7)">Calculators</a> &middot; Mortgage</div>
+    <h1 style="color:var(--white);font-size:clamp(28px,4.5vw,44px)">Mortgage Payment Calculator</h1>
+    <p class="hero-sub" style="margin-top:14px">Built for Canada: accurate semi-annual compounding, CMHC insurance, and minimum down payment rules, not a generic US calculator.</p>
+  </div>
+</div>
+
+<div class="calc-wrap">
+  <div class="calc-form">
+    <label class="calc-label">Home Price</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="c-price" value="750,000">
+
+    <label class="calc-label">Down Payment</label>
+    <div class="calc-row">
+      <input type="text" inputmode="numeric" class="calc-input" id="c-down-dollar" value="75,000">
+      <input type="text" inputmode="numeric" class="calc-input" id="c-down-percent" value="10">
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-top:-12px;margin-bottom:18px">Enter either $ amount or %, and they'll sync automatically</div>
+
+    <label class="calc-label">Interest Rate (Annual, %)</label>
+    <input type="text" inputmode="decimal" class="calc-input" id="c-rate" value="4.99">
+
+    <label class="calc-label">Amortization Period</label>
+    <div class="calc-toggle" id="c-amort-toggle">
+      <button data-years="25" class="active">25 Years</button>
+      <button data-years="30">30 Years</button>
+    </div>
+
+    <label class="calc-label">Payment Frequency</label>
+    <div class="calc-toggle" id="c-freq-toggle">
+      <button data-freq="monthly" class="active">Monthly</button>
+      <button data-freq="biweekly">Bi-Weekly</button>
+      <button data-freq="accelbiweekly">Accel. Bi-Weekly</button>
+    </div>
+  </div>
+
+  <div class="calc-results">
+    <div class="calc-result-main">
+      <div class="num" id="r-payment">$0</div>
+      <div class="lbl" id="r-payment-label">Per Month</div>
+    </div>
+    <div class="calc-result-row"><span class="k">Mortgage Amount</span><span class="v" id="r-mortgage">$0</span></div>
+    <div class="calc-result-row"><span class="k">CMHC Insurance Premium</span><span class="v" id="r-cmhc">$0</span></div>
+    <div class="calc-result-row"><span class="k">Total Interest Paid</span><span class="v" id="r-interest">$0</span></div>
+    <div class="calc-result-row"><span class="k">Total Cost of Mortgage</span><span class="v" id="r-total">$0</span></div>
+    <div class="calc-warning" id="r-warning" style="display:none"></div>
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+      <a href="/contact" class="btn btn-gold" style="text-align:center">Talk to a Mortgage Specialist &rarr;</a>
+      <a href="/#listings" class="btn btn-ghost" style="text-align:center">Browse Homes in This Range</a>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt">
+  <div class="section-inner calc-faq" style="max-width:780px">
+    <div class="eyebrow" style="justify-content:center">Common Questions</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:36px">Mortgage Calculator FAQ</h2>
+
+    <details>
+      <summary>Why does this calculator give a different number than a US mortgage calculator?</summary>
+      <div class="a">Canadian mortgages are legally required to compound semi-annually, not monthly like US mortgages. This calculator uses the correct Canadian formula; a generic US-built calculator will give you a slightly wrong number.</div>
+    </details>
+
+    <details>
+      <summary>What is CMHC insurance and when do I need it?</summary>
+      <div class="a">If your down payment is less than 20% of the purchase price, Canadian lenders require mortgage default insurance (commonly called CMHC insurance, though there are other providers). The premium is added to your mortgage amount and is calculated based on how much you're putting down: the smaller your down payment, the higher the premium rate.</div>
+    </details>
+
+    <details>
+      <summary>What's the minimum down payment in Canada?</summary>
+      <div class="a">5% on the portion of the price up to $500,000, plus 10% on the portion between $500,000 and $1.5M. Homes over $1.5M require a minimum 20% down payment and aren't eligible for mortgage insurance at all.</div>
+    </details>
+
+    <details>
+      <summary>Can I get a 30-year amortization?</summary>
+      <div class="a">Yes, if you're a first-time buyer or purchasing a newly-built home, insured mortgages can be amortized over 30 years instead of the standard 25. This lowers your monthly payment but increases total interest paid, and carries a small premium surcharge.</div>
+    </details>
+
+    <details>
+      <summary>Does accelerated bi-weekly actually save money?</summary>
+      <div class="a">Yes, genuinely. Accelerated bi-weekly payments equal half your monthly payment, paid every two weeks. That works out to 26 payments a year instead of 24, effectively one extra monthly payment annually. That extra payment goes straight to principal, meaningfully shortening your amortization and cutting total interest.</div>
+    </details>
+  </div>
+</div>
+
+<div class="section section-dark" style="text-align:center">
+  <div class="section-inner">
+    <h2 class="section-title" style="color:var(--white)">Ready to see what fits your budget?</h2>
+    <p class="section-sub" style="color:rgba(250,246,239,.72);max-width:560px;margin:16px auto 0">Mark Jontz &amp; Associates can connect you with a trusted West Kelowna mortgage broker and match you to homes in your real price range.</p>
+    <a href="/contact" class="btn btn-gold" style="margin-top:28px">Get Started &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">WEST KELOWNA<span>LISTINGS</span></div>
+      <p class="footer-desc">West Kelowna's dedicated real estate resource. Powered by <a href="https://www.markjontz.com" style="color:var(--gold-light)">Mark Jontz &amp; Associates</a> at Royal LePage Kelowna.</p>
+      <p class="footer-desc" style="margin-top:14px">Searching in Kelowna? <a href="https://kelownalistings.com" style="color:var(--gold-light);font-weight:700">Visit KelownaListings.com &rarr;</a></p>
+    </div>
+    <div>
+      <div class="footer-heading">Neighbourhoods</div>
+      <ul class="footer-links">
+        <li><a href="/glenrosa">Glenrosa</a></li>
+        <li><a href="/shannon-lake">Shannon Lake</a></li>
+        <li><a href="/smith-creek">Smith Creek</a></li>
+        <li><a href="/lakeview-heights">Lakeview Heights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Tools</div>
+      <ul class="footer-links">
+        <li><a href="/calculators">All Calculators</a></li>
+        <li><a href="/quiz">Neighbourhood Quiz</a></li>
+        <li><a href="/wfn-leasehold">WFN Leasehold Guide</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:12508616002">250-861-6002</a></li>
+        <li><a href="mailto:info@markjontz.com">info@markjontz.com</a></li>
+        <li><a href="/team">Our Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mark Jontz &amp; Associates | Royal LePage Kelowna. All rights reserved.</p>
+    <p style="margin-top:6px">The trademarks MLS&reg;, Multiple Listing Service&reg; and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var priceEl = document.getElementById('c-price');
+  var downDollarEl = document.getElementById('c-down-dollar');
+  var downPercentEl = document.getElementById('c-down-percent');
+  var rateEl = document.getElementById('c-rate');
+  var amortYears = 25;
+  var freq = 'monthly';
+
+  function parseNum(str) {
+    return parseFloat(String(str).replace(/[^0-9.]/g, '')) || 0;
+  }
+  function fmtMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-CA');
+  }
+  function fmtInput(n) {
+    return Math.round(n).toLocaleString('en-CA');
+  }
+
+  function minDownPayment(price) {
+    if (price <= 500000) return price * 0.05;
+    if (price <= 1500000) return 500000 * 0.05 + (price - 500000) * 0.10;
+    return price * 0.20;
+  }
+
+  function cmhcRate(downPercent) {
+    if (downPercent >= 20) return 0;
+    if (downPercent >= 15) return 0.028;
+    if (downPercent >= 10) return 0.031;
+    if (downPercent >= 5) return 0.040;
+    return null;
+  }
+
+  function monthlyPayment(principal, annualRatePercent, years) {
+    var r = annualRatePercent / 100;
+    var semiAnnualRate = r / 2;
+    var effectiveMonthlyRate = Math.pow(1 + semiAnnualRate, 1 / 6) - 1;
+    var n = years * 12;
+    if (effectiveMonthlyRate === 0) return principal / n;
+    var factor = Math.pow(1 + effectiveMonthlyRate, n);
+    return principal * (effectiveMonthlyRate * factor) / (factor - 1);
+  }
+
+  function syncFromDollar() {
+    var price = parseNum(priceEl.value);
+    var down = parseNum(downDollarEl.value);
+    if (price > 0) downPercentEl.value = (down / price * 100).toFixed(1);
+  }
+  function syncFromPercent() {
+    var price = parseNum(priceEl.value);
+    var pct = parseNum(downPercentEl.value);
+    downDollarEl.value = fmtInput(price * pct / 100);
+  }
+
+  function calculate() {
+    var price = parseNum(priceEl.value);
+    var down = parseNum(downDollarEl.value);
+    var rate = parseNum(rateEl.value);
+    if (price <= 0) return;
+
+    var downPercent = (down / price) * 100;
+    var minDown = minDownPayment(price);
+    var warningEl = document.getElementById('r-warning');
+
+    if (down < minDown) {
+      warningEl.style.display = 'block';
+      warningEl.textContent = 'Minimum down payment for a ' + fmtMoney(price) + ' home is ' + fmtMoney(minDown) + ' (' + (minDown/price*100).toFixed(1) + '%). Using the minimum for this calculation.';
+      down = minDown;
+      downPercent = (down / price) * 100;
+    } else {
+      warningEl.style.display = 'none';
+    }
+
+    var baseMortgage = price - down;
+    var rateForCmhc = cmhcRate(downPercent);
+    var cmhcPremium = rateForCmhc ? baseMortgage * rateForCmhc : 0;
+    var totalMortgage = baseMortgage + cmhcPremium;
+
+    var monthly = monthlyPayment(totalMortgage, rate, amortYears);
+    var displayPayment = monthly;
+    var displayLabel = 'Per Month';
+
+    if (freq === 'biweekly') {
+      displayPayment = monthly * 12 / 26;
+      displayLabel = 'Per Bi-Weekly Payment';
+    } else if (freq === 'accelbiweekly') {
+      displayPayment = monthly / 2;
+      displayLabel = 'Per Accelerated Bi-Weekly Payment';
+    }
+
+    var totalPaid = monthly * amortYears * 12;
+    var totalInterest = totalPaid - totalMortgage;
+
+    document.getElementById('r-payment').textContent = fmtMoney(displayPayment);
+    document.getElementById('r-payment-label').textContent = displayLabel;
+    document.getElementById('r-mortgage').textContent = fmtMoney(totalMortgage);
+    document.getElementById('r-cmhc').textContent = cmhcPremium > 0 ? fmtMoney(cmhcPremium) : 'Not Required';
+    document.getElementById('r-interest').textContent = fmtMoney(Math.max(0, totalInterest));
+    document.getElementById('r-total').textContent = fmtMoney(totalPaid);
+  }
+
+  priceEl.addEventListener('input', function(){ syncFromPercent(); calculate(); });
+  downDollarEl.addEventListener('input', function(){ syncFromDollar(); calculate(); });
+  downPercentEl.addEventListener('input', function(){ syncFromPercent(); calculate(); });
+  rateEl.addEventListener('input', calculate);
+
+  document.querySelectorAll('#c-amort-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#c-amort-toggle button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      amortYears = parseInt(btn.getAttribute('data-years'), 10);
+      calculate();
+    });
+  });
+  document.querySelectorAll('#c-freq-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#c-freq-toggle button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      freq = btn.getAttribute('data-freq');
+      calculate();
+    });
+  });
+
+  calculate();
+})();
+</script>
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+  document.body.classList.toggle('menu-open', m.classList.contains('open'));
+}
+</script>
+</body>
+</html>

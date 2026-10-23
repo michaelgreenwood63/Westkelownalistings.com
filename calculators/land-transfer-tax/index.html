@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BC Property Transfer Tax Calculator | West Kelowna Listings</title>
+<meta name="description" content="Calculate BC's property transfer tax for your West Kelowna home purchase, including first-time buyer exemption, newly built home exemption, and foreign buyer tax.">
+<link rel="canonical" href="https://westkelownalistings.com/calculators/land-transfer-tax">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="BC Property Transfer Tax Calculator | West Kelowna Listings">
+<meta property="og:description" content="Calculate BC's property transfer tax, including exemptions and the foreign buyer additional tax.">
+<meta property="og:url" content="https://westkelownalistings.com/calculators/land-transfer-tax">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BC Property Transfer Tax Calculator | West Kelowna Listings">
+<meta name="twitter:description" content="Calculate BC's property transfer tax, including exemptions and the foreign buyer additional tax.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/schema.js" defer></script>
+<script src="/animations.js" defer></script>
+<style>
+.calc-wrap{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}}
+.calc-form{background:var(--cream-deep);border:1px solid var(--border);border-radius:var(--radius);padding:30px}
+.calc-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:7px}
+.calc-input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:15px;font-family:inherit;color:var(--ink);margin-bottom:18px}
+.calc-input:focus{outline:none;border-color:var(--gold)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.calc-toggle{display:flex;gap:8px;margin-bottom:18px}
+.calc-toggle button{flex:1;padding:10px;border:1.5px solid var(--border);background:#fff;border-radius:var(--radius-sm);font-weight:700;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.calc-toggle button.active{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.calc-radio-group{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.calc-radio-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer}
+.calc-radio-option input{margin-top:3px}
+.calc-radio-option .rt{font-weight:700;font-size:14px;color:var(--ink)}
+.calc-radio-option .rd{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.5}
+.calc-checkbox-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer;margin-bottom:8px}
+.calc-checkbox-option input{margin-top:3px}
+.calc-section-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 14px;padding-top:18px;border-top:1px solid var(--border);font-family:'Fraunces',serif}
+.calc-section-label:first-child{margin-top:0;padding-top:0;border-top:none}
+.calc-hint{font-size:12px;color:var(--muted);margin-top:-12px;margin-bottom:18px;line-height:1.5}
+.calc-results{background:var(--ink);color:#fff;border-radius:var(--radius);padding:32px;position:sticky;top:90px;box-shadow:var(--shadow-md)}
+.calc-result-main{text-align:center;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:20px}
+.calc-result-main .num{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--gold-light)}
+.calc-result-main .lbl{font-size:12px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.calc-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.calc-compare-card{background:rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.calc-compare-card .v{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#fff}
+.calc-compare-card .k{font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.calc-result-row{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.calc-result-row .k{color:rgba(255,255,255,.6)}
+.calc-result-row .v{font-weight:700}
+.calc-result-row.total{border-top:1.5px solid rgba(255,255,255,.25);border-bottom:none;margin-top:6px;padding-top:14px;font-size:15px}
+.calc-warning{background:rgba(198,144,63,.18);border:1px solid var(--gold);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;margin-top:16px;color:#fff}
+.calc-note{font-size:11px;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.65}
+.calc-faq details{border-bottom:1px solid var(--border);padding:18px 0}
+.calc-faq summary{font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;list-style:none;font-family:'Fraunces',serif}
+.calc-faq summary::-webkit-details-marker{display:none}
+.calc-faq .a{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.75}
+.tools-grid{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:block;box-shadow:var(--shadow-sm)}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.tool-icon{font-size:28px;margin-bottom:14px}
+.tool-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.tool-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.tool-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--cream-deep);color:var(--muted);padding:4px 11px;border-radius:999px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">WEST KELOWNA<span>LISTINGS</span></a>
+  <div class="nav-links">
+    <a href="/#neighbourhoods">Neighbourhoods</a>
+    <a href="/#listings">Listings</a>
+    <a href="/wfn-leasehold">WFN Leasehold</a>
+    <a href="/calculators" class="active">Calculators</a>
+    <a href="/quiz">Quiz</a>
+    <a href="/history">History</a>
+    <a href="/blog">Blog</a>
+    <a href="/team">Our Team</a>
+    <a href="/contact">Contact</a>
+    <a href="/#seller" class="nav-cta">Free Evaluation</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#neighbourhoods" onclick="toggleMenu()">Neighbourhoods</a>
+  <a href="/#listings" onclick="toggleMenu()">Listings</a>
+  <a href="/wfn-leasehold" onclick="toggleMenu()">WFN Leasehold</a>
+  <a href="/calculators" onclick="toggleMenu()">Calculators</a>
+  <a href="/quiz" onclick="toggleMenu()">Quiz</a>
+  <a href="/history" onclick="toggleMenu()">History</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
+  <a href="/team" onclick="toggleMenu()">Our Team</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="/#seller" onclick="toggleMenu()">Free Evaluation</a>
+</div>
+
+<div class="page-header" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop');min-height:40vh">
+  <div class="hero-scrim"></div>
+  <div class="page-header-inner">
+    <div class="hero-eyebrow"><a href="/calculators" style="color:rgba(255,255,255,.7)">Calculators</a> &middot; Property Transfer Tax</div>
+    <h1 style="color:var(--white);font-size:clamp(28px,4.5vw,44px)">BC Property Transfer Tax Calculator</h1>
+    <p class="hero-sub" style="margin-top:14px">Includes the first-time buyer exemption, newly built home exemption, and the foreign buyer additional tax that applies here in the Central Okanagan.</p>
+  </div>
+</div>
+
+<div class="calc-wrap">
+  <div class="calc-form">
+    <label class="calc-label">Purchase Price / Fair Market Value</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="l-price" value="750,000">
+
+    <label class="calc-label">Exemption</label>
+    <div class="calc-radio-group" id="l-exemption-group">
+      <label class="calc-radio-option">
+        <input type="radio" name="exemption" value="none" checked>
+        <div><div class="rt">No Exemption</div><div class="rd">Standard purchase: resale home, not a first purchase.</div></div>
+      </label>
+      <label class="calc-radio-option">
+        <input type="radio" name="exemption" value="fthb">
+        <div><div class="rt">First-Time Home Buyer</div><div class="rd">Never owned a principal residence anywhere, Canadian citizen/PR, 12+ months BC residency (or filed BC tax returns).</div></div>
+      </label>
+      <label class="calc-radio-option">
+        <input type="radio" name="exemption" value="newbuild">
+        <div><div class="rt">Newly Built Home</div><div class="rd">New construction, first occupant, no first-time-buyer requirement.</div></div>
+      </label>
+    </div>
+
+    <label class="calc-checkbox-option">
+      <input type="checkbox" id="l-foreign">
+      <div><div class="rt" style="font-size:14px">I am a foreign national, foreign corporation, or taxable trustee</div><div class="rd" style="font-size:12.5px;color:var(--muted);margin-top:2px">West Kelowna falls within the Central Okanagan Regional District, one of BC's designated Additional Property Transfer Tax areas (+20%).</div></div>
+    </label>
+  </div>
+
+  <div class="calc-results">
+    <div class="calc-result-main">
+      <div class="num" id="r-total">$0</div>
+      <div class="lbl">Total Tax Payable</div>
+    </div>
+    <div class="calc-result-row"><span class="k">General Property Transfer Tax</span><span class="v" id="r-general">$0</span></div>
+    <div class="calc-result-row"><span class="k">Exemption Applied</span><span class="v" id="r-exemption">$0</span></div>
+    <div class="calc-result-row"><span class="k">Net PTT After Exemption</span><span class="v" id="r-net">$0</span></div>
+    <div class="calc-result-row"><span class="k">Additional Foreign Buyer Tax</span><span class="v" id="r-foreign">$0</span></div>
+    <div class="calc-warning" id="r-warning" style="display:none"></div>
+    <div class="calc-note">Based on current BC Ministry of Finance property transfer tax rates and exemption thresholds. Eligibility for exemptions is self-declared here; confirm you qualify before relying on this figure.</div>
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+      <a href="/contact" class="btn btn-gold" style="text-align:center">Talk to the Team &rarr;</a>
+      <a href="/calculators" class="btn btn-ghost" style="text-align:center">All Calculators</a>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt">
+  <div class="section-inner calc-faq" style="max-width:780px">
+    <div class="eyebrow" style="justify-content:center">Common Questions</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:36px">Property Transfer Tax FAQ</h2>
+
+    <details>
+      <summary>How is BC's property transfer tax calculated?</summary>
+      <div class="a">1% on the first $200,000, 2% on the portion from $200,000 to $2,000,000, and 3% on the portion above $2,000,000. Residential properties also pay a further 2% on the portion of the value above $3,000,000.</div>
+    </details>
+
+    <details>
+      <summary>How does the first-time buyer exemption actually work?</summary>
+      <div class="a">It's a credit of up to $8,000 (the tax on a $500,000 home) applied against your property transfer tax, available in full for homes valued up to $835,000. Between $835,000 and $860,000 the credit shrinks proportionally to zero. Above $860,000, there's no exemption at all. You must be a Canadian citizen or permanent resident, have lived in BC for 12 consecutive months (or filed 2 BC income tax returns in the last 6 years), and have never owned a principal residence anywhere in the world.</div>
+    </details>
+
+    <details>
+      <summary>What's the newly built home exemption?</summary>
+      <div class="a">A full exemption on new construction valued up to $1,100,000, phasing out between $1,100,000 and $1,150,000. Unlike the first-time buyer exemption, you don't need to be a first-time buyer to qualify, but the home must be newly built and you must be its first occupant.</div>
+    </details>
+
+    <details>
+      <summary>Does the foreign buyer tax really apply in West Kelowna?</summary>
+      <div class="a">Yes. The 20% Additional Property Transfer Tax applies to foreign nationals, foreign corporations, and taxable trustees purchasing residential property in several designated regions of BC, including the Central Okanagan Regional District, which West Kelowna falls within. It's on top of, not instead of, the general property transfer tax.</div>
+    </details>
+
+    <details>
+      <summary>Can I combine the first-time buyer and newly built home exemptions?</summary>
+      <div class="a">No. You claim one exemption per property transfer, whichever you qualify for and which benefits you more. This calculator lets you compare both by switching the exemption option.</div>
+    </details>
+  </div>
+</div>
+
+<div class="section section-dark" style="text-align:center">
+  <div class="section-inner">
+    <h2 class="section-title" style="color:var(--white)">Want your exact closing costs, not just an estimate?</h2>
+    <p class="section-sub" style="color:rgba(250,246,239,.72);max-width:560px;margin:16px auto 0">Mark Jontz &amp; Associates works with conveyancing lawyers who can confirm your exact exemption eligibility before you write an offer.</p>
+    <a href="/contact" class="btn btn-gold" style="margin-top:28px">Talk to the Team &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">WEST KELOWNA<span>LISTINGS</span></div>
+      <p class="footer-desc">West Kelowna's dedicated real estate resource. Powered by <a href="https://www.markjontz.com" style="color:var(--gold-light)">Mark Jontz &amp; Associates</a> at Royal LePage Kelowna.</p>
+      <p class="footer-desc" style="margin-top:14px">Searching in Kelowna? <a href="https://kelownalistings.com" style="color:var(--gold-light);font-weight:700">Visit KelownaListings.com &rarr;</a></p>
+    </div>
+    <div>
+      <div class="footer-heading">Neighbourhoods</div>
+      <ul class="footer-links">
+        <li><a href="/glenrosa">Glenrosa</a></li>
+        <li><a href="/shannon-lake">Shannon Lake</a></li>
+        <li><a href="/smith-creek">Smith Creek</a></li>
+        <li><a href="/lakeview-heights">Lakeview Heights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Tools</div>
+      <ul class="footer-links">
+        <li><a href="/calculators">All Calculators</a></li>
+        <li><a href="/quiz">Neighbourhood Quiz</a></li>
+        <li><a href="/wfn-leasehold">WFN Leasehold Guide</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:12508616002">250-861-6002</a></li>
+        <li><a href="mailto:info@markjontz.com">info@markjontz.com</a></li>
+        <li><a href="/team">Our Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mark Jontz &amp; Associates | Royal LePage Kelowna. All rights reserved.</p>
+    <p style="margin-top:6px">The trademarks MLS&reg;, Multiple Listing Service&reg; and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var priceEl = document.getElementById('l-price');
+  var foreignEl = document.getElementById('l-foreign');
+
+  function parseNum(str) {
+    return parseFloat(String(str).replace(/[^0-9.]/g, '')) || 0;
+  }
+  function fmtMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-CA');
+  }
+  function getExemption() {
+    var checked = document.querySelector('input[name="exemption"]:checked');
+    return checked ? checked.value : 'none';
+  }
+
+  function generalPTT(price) {
+    var tax = 0;
+    if (price > 0) tax += Math.min(price, 200000) * 0.01;
+    if (price > 200000) tax += (Math.min(price, 2000000) - 200000) * 0.02;
+    if (price > 2000000) tax += (Math.min(price, 3000000) - 2000000) * 0.03;
+    if (price > 3000000) tax += (price - 3000000) * 0.05;
+    return tax;
+  }
+
+  function fthbExemption(price, ptt) {
+    if (price <= 835000) return Math.min(ptt, 8000);
+    if (price < 860000) return Math.min(ptt, 8000) * (860000 - price) / 25000;
+    return 0;
+  }
+
+  function newBuildExemption(price, ptt) {
+    if (price <= 1100000) return ptt;
+    if (price < 1150000) return ptt * (1150000 - price) / 50000;
+    return 0;
+  }
+
+  function calculate() {
+    var price = parseNum(priceEl.value);
+    var exemptionType = getExemption();
+    var isForeign = foreignEl.checked;
+    var warningEl = document.getElementById('r-warning');
+    warningEl.style.display = 'none';
+
+    if (price <= 0) return;
+
+    var ptt = generalPTT(price);
+    var exemption = 0;
+    if (exemptionType === 'fthb') exemption = fthbExemption(price, ptt);
+    if (exemptionType === 'newbuild') exemption = newBuildExemption(price, ptt);
+
+    var netPTT = ptt - exemption;
+    var foreignTax = isForeign ? price * 0.20 : 0;
+    var total = netPTT + foreignTax;
+
+    if (exemptionType === 'fthb' && price >= 860000) {
+      warningEl.style.display = 'block';
+      warningEl.textContent = 'This home\'s price is at or above the $860,000 cutoff. The first-time buyer exemption no longer applies.';
+    } else if (exemptionType === 'newbuild' && price >= 1150000) {
+      warningEl.style.display = 'block';
+      warningEl.textContent = 'This home\'s price is at or above the $1,150,000 cutoff. The newly built home exemption no longer applies.';
+    }
+
+    document.getElementById('r-total').textContent = fmtMoney(total);
+    document.getElementById('r-general').textContent = fmtMoney(ptt);
+    document.getElementById('r-exemption').textContent = exemption > 0 ? '−' + fmtMoney(exemption) : '$0';
+    document.getElementById('r-net').textContent = fmtMoney(netPTT);
+    document.getElementById('r-foreign').textContent = isForeign ? fmtMoney(foreignTax) : 'Not Applicable';
+  }
+
+  priceEl.addEventListener('input', calculate);
+  foreignEl.addEventListener('change', calculate);
+  document.querySelectorAll('input[name="exemption"]').forEach(function(el){
+    el.addEventListener('change', calculate);
+  });
+
+  calculate();
+})();
+</script>
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+  document.body.classList.toggle('menu-open', m.classList.contains('open'));
+}
+</script>
+</body>
+</html>

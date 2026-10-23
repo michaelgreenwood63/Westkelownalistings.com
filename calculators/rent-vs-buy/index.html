@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent vs. Buy Calculator (Canada) | West Kelowna Listings</title>
+<meta name="description" content="Compare renting vs. buying in West Kelowna over time: mortgage paydown, home appreciation, and opportunity cost, all with assumptions you control.">
+<link rel="canonical" href="https://westkelownalistings.com/calculators/rent-vs-buy">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Rent vs. Buy Calculator (Canada) | West Kelowna Listings">
+<meta property="og:description" content="Compare renting vs. buying over time, with assumptions you control, not ones we assert for you.">
+<meta property="og:url" content="https://westkelownalistings.com/calculators/rent-vs-buy">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rent vs. Buy Calculator (Canada) | West Kelowna Listings">
+<meta name="twitter:description" content="Compare renting vs. buying over time, with assumptions you control, not ones we assert for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/schema.js" defer></script>
+<script src="/animations.js" defer></script>
+<style>
+.calc-wrap{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}}
+.calc-form{background:var(--cream-deep);border:1px solid var(--border);border-radius:var(--radius);padding:30px}
+.calc-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:7px}
+.calc-input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:15px;font-family:inherit;color:var(--ink);margin-bottom:18px}
+.calc-input:focus{outline:none;border-color:var(--gold)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.calc-toggle{display:flex;gap:8px;margin-bottom:18px}
+.calc-toggle button{flex:1;padding:10px;border:1.5px solid var(--border);background:#fff;border-radius:var(--radius-sm);font-weight:700;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.calc-toggle button.active{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.calc-radio-group{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.calc-radio-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer}
+.calc-radio-option input{margin-top:3px}
+.calc-radio-option .rt{font-weight:700;font-size:14px;color:var(--ink)}
+.calc-radio-option .rd{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.5}
+.calc-checkbox-option{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer;margin-bottom:8px}
+.calc-checkbox-option input{margin-top:3px}
+.calc-section-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 14px;padding-top:18px;border-top:1px solid var(--border);font-family:'Fraunces',serif}
+.calc-section-label:first-child{margin-top:0;padding-top:0;border-top:none}
+.calc-hint{font-size:12px;color:var(--muted);margin-top:-12px;margin-bottom:18px;line-height:1.5}
+.calc-results{background:var(--ink);color:#fff;border-radius:var(--radius);padding:32px;position:sticky;top:90px;box-shadow:var(--shadow-md)}
+.calc-result-main{text-align:center;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:20px}
+.calc-result-main .num{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--gold-light)}
+.calc-result-main .lbl{font-size:12px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.calc-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.calc-compare-card{background:rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.calc-compare-card .v{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#fff}
+.calc-compare-card .k{font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.calc-result-row{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.calc-result-row .k{color:rgba(255,255,255,.6)}
+.calc-result-row .v{font-weight:700}
+.calc-result-row.total{border-top:1.5px solid rgba(255,255,255,.25);border-bottom:none;margin-top:6px;padding-top:14px;font-size:15px}
+.calc-warning{background:rgba(198,144,63,.18);border:1px solid var(--gold);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;margin-top:16px;color:#fff}
+.calc-note{font-size:11px;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.65}
+.calc-faq details{border-bottom:1px solid var(--border);padding:18px 0}
+.calc-faq summary{font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;list-style:none;font-family:'Fraunces',serif}
+.calc-faq summary::-webkit-details-marker{display:none}
+.calc-faq .a{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.75}
+.tools-grid{max-width:1100px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:block;box-shadow:var(--shadow-sm)}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.tool-icon{font-size:28px;margin-bottom:14px}
+.tool-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.tool-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.tool-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--cream-deep);color:var(--muted);padding:4px 11px;border-radius:999px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">WEST KELOWNA<span>LISTINGS</span></a>
+  <div class="nav-links">
+    <a href="/#neighbourhoods">Neighbourhoods</a>
+    <a href="/#listings">Listings</a>
+    <a href="/wfn-leasehold">WFN Leasehold</a>
+    <a href="/calculators" class="active">Calculators</a>
+    <a href="/quiz">Quiz</a>
+    <a href="/history">History</a>
+    <a href="/blog">Blog</a>
+    <a href="/team">Our Team</a>
+    <a href="/contact">Contact</a>
+    <a href="/#seller" class="nav-cta">Free Evaluation</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#neighbourhoods" onclick="toggleMenu()">Neighbourhoods</a>
+  <a href="/#listings" onclick="toggleMenu()">Listings</a>
+  <a href="/wfn-leasehold" onclick="toggleMenu()">WFN Leasehold</a>
+  <a href="/calculators" onclick="toggleMenu()">Calculators</a>
+  <a href="/quiz" onclick="toggleMenu()">Quiz</a>
+  <a href="/history" onclick="toggleMenu()">History</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
+  <a href="/team" onclick="toggleMenu()">Our Team</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="/#seller" onclick="toggleMenu()">Free Evaluation</a>
+</div>
+
+<div class="page-header" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop');min-height:40vh">
+  <div class="hero-scrim"></div>
+  <div class="page-header-inner">
+    <div class="hero-eyebrow"><a href="/calculators" style="color:rgba(255,255,255,.7)">Calculators</a> &middot; Rent vs. Buy</div>
+    <h1 style="color:var(--white);font-size:clamp(28px,4.5vw,44px)">Rent vs. Buy Calculator</h1>
+    <p class="hero-sub" style="margin-top:14px">Every future assumption below (appreciation, rent growth, investment return) is yours to set. We won't pretend to predict the market; we'll just do the math on whatever you assume.</p>
+  </div>
+</div>
+
+<div class="calc-wrap">
+  <div class="calc-form">
+    <div class="calc-section-label">If You Buy</div>
+    <label class="calc-label">Home Price</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="rb-price" value="750,000">
+
+    <label class="calc-label">Down Payment</label>
+    <div class="calc-row">
+      <input type="text" inputmode="numeric" class="calc-input" id="rb-down-dollar" value="150,000">
+      <input type="text" inputmode="numeric" class="calc-input" id="rb-down-percent" value="20">
+    </div>
+
+    <label class="calc-label">Mortgage Rate (Annual, %)</label>
+    <input type="text" inputmode="decimal" class="calc-input" id="rb-rate" value="4.99">
+
+    <label class="calc-label">Amortization</label>
+    <div class="calc-toggle" id="rb-amort-toggle">
+      <button data-years="25" class="active">25 Years</button>
+      <button data-years="30">30 Years</button>
+    </div>
+
+    <label class="calc-label">Annual Property Tax ($)</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="rb-tax" value="3,200">
+    <div class="calc-hint">West Kelowna sets its own mill rate separately from Kelowna. Use your target property's actual tax notice if you have one.</div>
+
+    <div class="calc-row">
+      <div>
+        <label class="calc-label">Home Insurance ($/yr)</label>
+        <input type="text" inputmode="numeric" class="calc-input" id="rb-insurance" value="1,200">
+      </div>
+      <div>
+        <label class="calc-label">Maintenance (%/yr of value)</label>
+        <input type="text" inputmode="decimal" class="calc-input" id="rb-maintenance" value="1.0">
+      </div>
+    </div>
+    <label class="calc-label">Condo/Strata Fees ($/mo, if any)</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="rb-condo" value="0">
+
+    <div class="calc-section-label">If You Rent Instead</div>
+    <label class="calc-label">Monthly Rent (comparable home)</label>
+    <input type="text" inputmode="numeric" class="calc-input" id="rb-rent" value="2,600">
+
+    <div class="calc-section-label">Your Assumptions</div>
+    <div class="calc-row3">
+      <div>
+        <label class="calc-label">Years to Compare</label>
+        <input type="text" inputmode="numeric" class="calc-input" id="rb-years" value="7">
+      </div>
+      <div>
+        <label class="calc-label">Home Appreciation %/yr</label>
+        <input type="text" inputmode="decimal" class="calc-input" id="rb-appreciation" value="3.0">
+      </div>
+      <div>
+        <label class="calc-label">Rent Increase %/yr</label>
+        <input type="text" inputmode="decimal" class="calc-input" id="rb-rentgrowth" value="3.0">
+      </div>
+    </div>
+    <label class="calc-label">Investment Return If Renting %/yr</label>
+    <input type="text" inputmode="decimal" class="calc-input" id="rb-investreturn" value="5.0">
+    <div class="calc-hint">These four numbers are assumptions, not predictions. Try optimistic and pessimistic versions and see how much they move the answer.</div>
+  </div>
+
+  <div class="calc-results">
+    <div class="calc-result-main">
+      <div class="num" id="r-verdict">&mdash;</div>
+      <div class="lbl">After the years you set, at your assumptions</div>
+    </div>
+    <div class="calc-compare">
+      <div class="calc-compare-card"><div class="v" id="r-buy-networth">$0</div><div class="k">Net Worth If You Buy</div></div>
+      <div class="calc-compare-card"><div class="v" id="r-rent-networth">$0</div><div class="k">Net Worth If You Rent</div></div>
+    </div>
+    <div class="calc-result-row"><span class="k">Home Value at End</span><span class="v" id="r-home-value">$0</span></div>
+    <div class="calc-result-row"><span class="k">Remaining Mortgage Balance</span><span class="v" id="r-balance">$0</span></div>
+    <div class="calc-result-row"><span class="k">Est. Selling Costs (4% + GST)</span><span class="v" id="r-selling">$0</span></div>
+    <div class="calc-result-row"><span class="k">Invested Portfolio (Renting)</span><span class="v" id="r-portfolio">$0</span></div>
+    <div class="calc-result-row"><span class="k">Final Monthly Rent</span><span class="v" id="r-final-rent">$0</span></div>
+    <div class="calc-note">Simplified annual model for informational purposes only. Doesn't account for renovations, moving costs between rentals, or tax changes. BC principal residences aren't subject to capital gains tax, unlike investment property. This comparison assumes a principal residence.</div>
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+      <a href="/contact" class="btn btn-gold" style="text-align:center">Talk to the Team &rarr;</a>
+      <a href="/calculators/mortgage" class="btn btn-ghost" style="text-align:center">Mortgage Calculator</a>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt">
+  <div class="section-inner calc-faq" style="max-width:780px">
+    <div class="eyebrow" style="justify-content:center">Common Questions</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:36px">Rent vs. Buy FAQ</h2>
+
+    <details>
+      <summary>Why doesn't this calculator just tell me the "right" answer?</summary>
+      <div class="a">Because nobody actually knows future appreciation, rent growth, or investment returns, anyone who tells you a precise future number is guessing. This tool does the math correctly on whatever assumptions you choose, and shows you how sensitive the answer is to changing them.</div>
+    </details>
+
+    <details>
+      <summary>How does the "renting" side build wealth in this model?</summary>
+      <div class="a">The model assumes a renter invests what a buyer would've spent on a down payment and closing costs, plus invests the difference in any year where renting costs less than owning (property tax, insurance, maintenance, and mortgage payments add up). That invested portfolio compounds at your assumed investment return.</div>
+    </details>
+
+    <details>
+      <summary>Why is buying's tax treatment different in Canada than the US calculators I've seen?</summary>
+      <div class="a">Canada doesn't allow a mortgage interest deduction like the US does, but it also doesn't charge capital gains tax on the sale of your principal residence, which the US does above certain thresholds. This calculator is built around Canadian rules, not a converted US tool.</div>
+    </details>
+
+    <details>
+      <summary>What isn't factored into this estimate?</summary>
+      <div class="a">Upfront closing costs on the purchase (property transfer tax, legal fees, inspection) aren't included here; see our <a href="/calculators/land-transfer-tax">Property Transfer Tax Calculator</a> for that piece. Renovation costs, moving costs if you'd need to move again while renting, and lifestyle value (stability, ability to renovate, etc.) aren't captured in any dollar figure.</div>
+    </details>
+  </div>
+</div>
+
+<div class="section section-dark" style="text-align:center">
+  <div class="section-inner">
+    <h2 class="section-title" style="color:var(--white)">Want to talk through your specific numbers?</h2>
+    <p class="section-sub" style="color:rgba(250,246,239,.72);max-width:560px;margin:16px auto 0">Mark Jontz &amp; Associates can walk through real listings that match your budget either way.</p>
+    <a href="/contact" class="btn btn-gold" style="margin-top:28px">Get Started &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">WEST KELOWNA<span>LISTINGS</span></div>
+      <p class="footer-desc">West Kelowna's dedicated real estate resource. Powered by <a href="https://www.markjontz.com" style="color:var(--gold-light)">Mark Jontz &amp; Associates</a> at Royal LePage Kelowna.</p>
+      <p class="footer-desc" style="margin-top:14px">Searching in Kelowna? <a href="https://kelownalistings.com" style="color:var(--gold-light);font-weight:700">Visit KelownaListings.com &rarr;</a></p>
+    </div>
+    <div>
+      <div class="footer-heading">Neighbourhoods</div>
+      <ul class="footer-links">
+        <li><a href="/glenrosa">Glenrosa</a></li>
+        <li><a href="/shannon-lake">Shannon Lake</a></li>
+        <li><a href="/smith-creek">Smith Creek</a></li>
+        <li><a href="/lakeview-heights">Lakeview Heights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Tools</div>
+      <ul class="footer-links">
+        <li><a href="/calculators">All Calculators</a></li>
+        <li><a href="/quiz">Neighbourhood Quiz</a></li>
+        <li><a href="/wfn-leasehold">WFN Leasehold Guide</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:12508616002">250-861-6002</a></li>
+        <li><a href="mailto:info@markjontz.com">info@markjontz.com</a></li>
+        <li><a href="/team">Our Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mark Jontz &amp; Associates | Royal LePage Kelowna. All rights reserved.</p>
+    <p style="margin-top:6px">The trademarks MLS&reg;, Multiple Listing Service&reg; and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var priceEl = document.getElementById('rb-price');
+  var downDollarEl = document.getElementById('rb-down-dollar');
+  var downPercentEl = document.getElementById('rb-down-percent');
+  var rateEl = document.getElementById('rb-rate');
+  var taxEl = document.getElementById('rb-tax');
+  var insuranceEl = document.getElementById('rb-insurance');
+  var maintenanceEl = document.getElementById('rb-maintenance');
+  var condoEl = document.getElementById('rb-condo');
+  var rentEl = document.getElementById('rb-rent');
+  var yearsEl = document.getElementById('rb-years');
+  var appreciationEl = document.getElementById('rb-appreciation');
+  var rentGrowthEl = document.getElementById('rb-rentgrowth');
+  var investReturnEl = document.getElementById('rb-investreturn');
+  var amortYears = 25;
+
+  function parseNum(str) {
+    return parseFloat(String(str).replace(/[^0-9.]/g, '')) || 0;
+  }
+  function fmtMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-CA');
+  }
+  function fmtInput(n) {
+    return Math.round(n).toLocaleString('en-CA');
+  }
+
+  function minDownPayment(price) {
+    if (price <= 500000) return price * 0.05;
+    if (price <= 1500000) return 500000 * 0.05 + (price - 500000) * 0.10;
+    return price * 0.20;
+  }
+  function cmhcRate(downPercent) {
+    if (downPercent >= 20) return 0;
+    if (downPercent >= 15) return 0.028;
+    if (downPercent >= 10) return 0.031;
+    if (downPercent >= 5) return 0.040;
+    return null;
+  }
+  function monthlyPayment(principal, annualRatePercent, years) {
+    var r = annualRatePercent / 100;
+    var semiAnnualRate = r / 2;
+    var effectiveMonthlyRate = Math.pow(1 + semiAnnualRate, 1 / 6) - 1;
+    var n = years * 12;
+    if (effectiveMonthlyRate === 0) return principal / n;
+    var factor = Math.pow(1 + effectiveMonthlyRate, n);
+    return principal * (effectiveMonthlyRate * factor) / (factor - 1);
+  }
+  function remainingBalance(principal, annualRatePercent, years, monthsElapsed) {
+    var r = annualRatePercent / 100;
+    var semiAnnualRate = r / 2;
+    var i = Math.pow(1 + semiAnnualRate, 1 / 6) - 1;
+    var N = years * 12;
+    if (i === 0) return principal * (1 - monthsElapsed / N);
+    var factorN = Math.pow(1 + i, N);
+    var factorN_n = Math.pow(1 + i, monthsElapsed);
+    return principal * (factorN - factorN_n) / (factorN - 1);
+  }
+
+  function syncFromDollar() {
+    var price = parseNum(priceEl.value);
+    var down = parseNum(downDollarEl.value);
+    if (price > 0) downPercentEl.value = (down / price * 100).toFixed(1);
+  }
+  function syncFromPercent() {
+    var price = parseNum(priceEl.value);
+    var pct = parseNum(downPercentEl.value);
+    downDollarEl.value = fmtInput(price * pct / 100);
+  }
+
+  function calculate() {
+    var price = parseNum(priceEl.value);
+    var down = parseNum(downDollarEl.value);
+    var rate = parseNum(rateEl.value);
+    var annualTax = parseNum(taxEl.value);
+    var insurance = parseNum(insuranceEl.value);
+    var maintenancePercent = parseNum(maintenanceEl.value);
+    var condoFee = parseNum(condoEl.value);
+    var rent = parseNum(rentEl.value);
+    var years = Math.max(1, parseNum(yearsEl.value));
+    var appreciation = parseNum(appreciationEl.value) / 100;
+    var rentGrowth = parseNum(rentGrowthEl.value) / 100;
+    var investReturn = parseNum(investReturnEl.value) / 100;
+
+    if (price <= 0 || rate <= 0) return;
+
+    var minDown = minDownPayment(price);
+    if (down < minDown) down = minDown;
+    var downPercent = (down / price) * 100;
+
+    var baseMortgage = price - down;
+    var cmhc = cmhcRate(downPercent);
+    var cmhcPremium = cmhc ? baseMortgage * cmhc : 0;
+    var totalMortgage = baseMortgage + cmhcPremium;
+    var monthly = monthlyPayment(totalMortgage, rate, amortYears);
+
+    var portfolio = down;
+
+    var currentRent = rent;
+    var currentHomeValue = price;
+    var currentInsurance = insurance;
+    var currentAnnualTax = annualTax;
+
+    for (var year = 1; year <= years; year++) {
+      var annualMaintenance = currentHomeValue * (maintenancePercent / 100);
+      var annualCondo = condoFee * 12;
+      var annualMortgagePayments = monthly * 12;
+      var annualBuyingCost = currentAnnualTax + annualMaintenance + annualCondo + annualMortgagePayments + currentInsurance;
+
+      var annualRentCost = currentRent * 12;
+
+      var gap = annualBuyingCost - annualRentCost;
+      portfolio = portfolio * (1 + investReturn) + gap;
+
+      currentHomeValue = currentHomeValue * (1 + appreciation);
+      currentRent = currentRent * (1 + rentGrowth);
+      currentInsurance = currentInsurance * (1 + appreciation);
+      currentAnnualTax = currentAnnualTax * (1 + appreciation);
+    }
+
+    var monthsElapsed = years * 12;
+    var balance = monthsElapsed >= amortYears * 12 ? 0 : remainingBalance(totalMortgage, rate, amortYears, monthsElapsed);
+    var sellingCommission = currentHomeValue * 0.04;
+    var sellingGst = sellingCommission * 0.05;
+    var sellingCosts = sellingCommission + sellingGst;
+
+    var buyNetWorth = currentHomeValue - balance - sellingCosts;
+    var rentNetWorth = portfolio;
+
+    document.getElementById('r-buy-networth').textContent = fmtMoney(buyNetWorth);
+    document.getElementById('r-rent-networth').textContent = fmtMoney(rentNetWorth);
+    document.getElementById('r-home-value').textContent = fmtMoney(currentHomeValue);
+    document.getElementById('r-balance').textContent = fmtMoney(balance);
+    document.getElementById('r-selling').textContent = fmtMoney(sellingCosts);
+    document.getElementById('r-portfolio').textContent = fmtMoney(portfolio);
+    document.getElementById('r-final-rent').textContent = fmtMoney(currentRent) + '/mo';
+
+    var diff = buyNetWorth - rentNetWorth;
+    var verdictEl = document.getElementById('r-verdict');
+    if (Math.abs(diff) < price * 0.01) {
+      verdictEl.textContent = 'Roughly a Wash';
+    } else if (diff > 0) {
+      verdictEl.textContent = 'Buying Ahead by ' + fmtMoney(diff);
+    } else {
+      verdictEl.textContent = 'Renting Ahead by ' + fmtMoney(-diff);
+    }
+  }
+
+  priceEl.addEventListener('input', function(){ syncFromPercent(); calculate(); });
+  downDollarEl.addEventListener('input', function(){ syncFromDollar(); calculate(); });
+  downPercentEl.addEventListener('input', function(){ syncFromPercent(); calculate(); });
+  [rateEl, taxEl, insuranceEl, maintenanceEl, condoEl, rentEl, yearsEl, appreciationEl, rentGrowthEl, investReturnEl].forEach(function(el){
+    el.addEventListener('input', calculate);
+  });
+
+  document.querySelectorAll('#rb-amort-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#rb-amort-toggle button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      amortYears = parseInt(btn.getAttribute('data-years'), 10);
+      calculate();
+    });
+  });
+
+  calculate();
+})();
+</script>
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+  document.body.classList.toggle('menu-open', m.classList.contains('open'));
+}
+</script>
+</body>
+</html>
