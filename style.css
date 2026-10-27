@@ -411,6 +411,7 @@ body.menu-open{overflow:hidden}
 .lead-inner h2{color:var(--cream)}
 .lead-inner .section-sub{color:rgba(250,246,239,.72);margin-left:auto;margin-right:auto}
 .lead-form{margin-top:40px;display:flex;flex-direction:column;gap:14px;max-width:480px;margin-left:auto;margin-right:auto}
+.lead-form-fields{display:flex;flex-direction:column;gap:14px}
 .lead-row{display:flex;gap:14px}
 .lead-row .lead-field{flex:1}
 .lead-field label{display:block;font-size:12.5px;color:rgba(250,246,239,.6);text-align:left;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
@@ -422,8 +423,17 @@ body.menu-open{overflow:hidden}
 .lead-field input:focus,.lead-field textarea:focus{outline:none;border-color:var(--gold)}
 .lead-field input::placeholder,.lead-field textarea::placeholder{color:rgba(250,246,239,.35)}
 .lead-submit{margin-top:6px}
-.lead-success{display:none;color:var(--gold-light);font-weight:700;margin-top:14px}
-.lead-form-error{display:none;color:#e08a8a;font-size:14px;margin-top:10px}
+.lead-success{display:none;text-align:center;padding:30px 10px}
+.lead-success-icon{width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;margin:0 auto 18px}
+.lead-success-title{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--cream);margin-bottom:10px}
+.lead-success-sub{font-size:14.5px;line-height:1.75;color:rgba(250,246,239,.72);max-width:380px;margin:0 auto}
+.lead-success-sub a{color:var(--gold-light);font-weight:700;text-decoration:none}
+.lead-success-sub a:hover{text-decoration:underline}
+.lead-success.on-light .lead-success-title{color:var(--ink)}
+.lead-success.on-light .lead-success-sub{color:var(--muted)}
+.lead-success.on-light .lead-success-sub a{color:var(--gold-dark)}
+.lead-form-error{display:none;color:#e08a8a;font-size:14px;margin-top:10px;text-align:center}
+.lead-form-error.on-light{color:#b3443f}
 .lead-form.success .lead-form-fields{display:none}
 .lead-form.success .lead-success{display:block}
 
