@@ -262,9 +262,51 @@
     section.style.display = '';
   }
 
+  // Per-building pages (strata complex pages). A page sets, before this
+  // script loads:
+  //   window.BUILDING_FILTER = { name: "...", addresses: [{num:"3645", words:["gosset"]}] }
+  // `num` must exactly match StreetNumber; `words` are lowercase tokens that
+  // must ALL appear in StreetName+StreetSuffix. Supports multiple accepted
+  // number/word combos per building (secondary civic addresses). Same proven
+  // pattern as kelownamanufactured.com's window.PARK_FILTER — do not deviate
+  // from it without a reason, it's been tested against real MLS quirks.
+  function matchesBuildingFilter(l) {
+    if (!window.BUILDING_FILTER) return false;
+    var num = (l.StreetNumber || '').toString();
+    var nameStr = ((l.StreetName || '') + ' ' + (l.StreetSuffix || '')).toLowerCase();
+    return window.BUILDING_FILTER.addresses.some(function (entry) {
+      if (entry.num !== num) return false;
+      return entry.words.every(function (w) { return nameStr.indexOf(w) !== -1; });
+    });
+  }
+
+  function renderBuildingListings(listings) {
+    if (!window.BUILDING_FILTER) return;
+    var container = document.getElementById('building-listings-container');
+    var emptyEl = document.getElementById('building-listings-empty');
+    if (!container) return;
+
+    var mine = listings.filter(matchesBuildingFilter);
+    mine.sort(function (a, b) { return new Date(b.OriginalEntryTimestamp || 0) - new Date(a.OriginalEntryTimestamp || 0); });
+
+    if (!mine.length) {
+      container.innerHTML = '';
+      if (emptyEl) emptyEl.style.display = 'block';
+      return;
+    }
+    if (emptyEl) emptyEl.style.display = 'none';
+    container.innerHTML = mine.map(renderCard).join('');
+    container.querySelectorAll('.listing-card[data-key]').forEach(function (card) {
+      var key = card.getAttribute('data-key');
+      if (!key) return;
+      card.addEventListener('click', function () { window.location.href = '/listing?id=' + encodeURIComponent(key); });
+    });
+  }
+
   function loadListings() {
     var container = document.getElementById('listings-container');
-    if (!container) return;
+    var hasOtherConsumer = document.getElementById('our-listings-container') || document.getElementById('building-listings-container');
+    if (!container && !hasOtherConsumer) return;
 
     var area = window.__WK_AREA;
     var endpoint = area ? '/api/listings?area=' + encodeURIComponent(area) : '/api/listings';
@@ -272,13 +314,15 @@
     fetch(endpoint)
       .then(function (r) { return r.json(); })
       .then(function (data) {
-        if (!data.configured) { container.innerHTML = ''; return; }
+        if (!data.configured) { if (container) container.innerHTML = ''; return; }
         if (data.error) {
-          container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">Could not load listings right now. <a href="/contact">Contact us</a> for current availability.</p>';
+          if (container) container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">Could not load listings right now. <a href="/contact">Contact us</a> for current availability.</p>';
           return;
         }
         _allListings = data.listings || [];
         renderOurListings(_allListings);
+        renderBuildingListings(_allListings);
+        if (!container) return;
         if (_allListings.length === 0) {
           container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">No active listings right now. <a href="/contact">Contact us</a> to get notified when something hits the market.</p>';
           return;
@@ -292,7 +336,7 @@
         }
       })
       .catch(function () {
-        container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">Could not load listings. <a href="/contact">Contact us</a> directly.</p>';
+        if (container) container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">Could not load listings. <a href="/contact">Contact us</a> directly.</p>';
       });
   }
 
