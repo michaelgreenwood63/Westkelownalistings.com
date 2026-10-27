@@ -69,32 +69,32 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 3521 Carrington Road | Leasehold | 4 | `/aria-carrington-road` | Same complex as 3533 Carrington Road — see that row. Combined onto one page (/aria-carrington-road) since both addresses are the same building (Aria). |
 | ⬜ Not started | 2210 Louie Drive | Leasehold | 3 | `/2210-louie-drive` | |
 | ⬜ Not started | 3545 Carrington Road | Leasehold | 3 | `/3545-carrington-road` | |
-| ✅ Page live | 3220 Skyview Lane | Leasehold | 3 | `/copper-sky-skyview-lane` | Real name confirmed: Copper Sky. Combined with 3211 Skyview Lane, same complex (same amenity building described in both). Resort-style amenities (pool/hot tub/steam/sauna/gym/sport courts). Leasehold, WFN not confirmed. NOTE: 3205 + 3229 Skyview Lane (elsewhere in this tracker) are very likely also Copper Sky — not yet merged onto this page, worth confirming and combining in a future pass. |
+| ✅ Page live | 3220 Skyview Lane | Leasehold | 3 | `/copper-sky-skyview-lane` | Real name confirmed: Copper Sky. Combined with 3211 Skyview Lane, same complex (same amenity building described in both). Resort-style amenities (pool/hot tub/steam/sauna/gym/sport courts). Leasehold, WFN not confirmed. Now also covers 3205 + 3229 Skyview Lane (merged, same complex confirmed via remarks). |
 | ✅ Page live | 3645 Carrington Road | Freehold | 3 | `/lakewind-carrington-road` | Real name confirmed: Lakewind. Freehold apartment near Two Eagles Golf Course. |
 | ✅ Page live | 2070 Boucherie Road | Leasehold | 2 | `/tuscany-villas-boucherie-road` | Real name confirmed: Tuscany Villas. Leasehold (WFN not confirmed, do not assume). Lake/mountain views, poolside, dual-primary layouts. |
 | ✅ Page live | 3211 Skyview Lane | Leasehold | 2 | `/copper-sky-skyview-lane` | Same complex as 3220 Skyview Lane — see that row. Copper Sky. |
 | ✅ Page live | 3890 Brown Road | Freehold | 2 | `/monticello-brown-road` | Real name confirmed: Monticello. 55+ community, clubhouse/workshop/community garden/guest suite, pet-friendly. |
-| ⬜ Not started | 2250 Majoros Road | Freehold | 2 | `/2250-majoros-road` | |
+| ✅ Page live | 2250 Majoros Road | Freehold | 2 | `/neo-majoros-road` | Real name confirmed: NEO. Built Green® Platinum certified, rooftop solar panels, HRV system. Freehold. |
 | ✅ Page live | 2433 Ingram Road | Freehold | 2 | `/2433-ingram-road` | No distinct marketed name found. Freehold bare land strata, includes a 55+ section. |
 | ⚠️ Blocked | 3050 Seclusion Bay Road | Leasehold/Other | 2 | `/3050-seclusion-bay-road` | No active listings in the live DDF feed (the 2 listings from the Oct PDF export appear to have sold/expired) and no PublicRemarks text available to research from — insufficient material to build a verified page right now. Revisit if new listings appear, or research via web search specifically. |
-| ⬜ Not started | 2151 Madera Court | Leasehold | 1 | `/2151-madera-court` | |
+| ✅ Page live | 2151 Madera Court | Leasehold | 1 | `/sonoma-pines` | Part of Sonoma Pines (confirmed via remarks: "Many Sonoma Pines walkouts..."). See Sonoma Pines row below for full notes. |
 | ⬜ Not started | 2100 Boucherie Road | Freehold | 1 | `/2100-boucherie-road` | |
-| ⬜ Not started | 2135 Madera Court | Leasehold | 1 | `/2135-madera-court` | |
-| ⬜ Not started | 2150 Alvarado Trail | Leasehold | 1 | `/2150-alvarado-trail` | |
-| ⬜ Not started | 2160 Serrento Lane | Leasehold | 1 | `/2160-serrento-lane` | |
-| ⬜ Not started | 2400 Hawks Boulevard | Leasehold | 1 | `/2400-hawks-boulevard` | |
+| ✅ Page live | 2135 Madera Court | Leasehold | 1 | `/sonoma-pines` | Same street as confirmed Sonoma Pines address (2151 Madera Court) — no active listing to directly verify this specific unit, included on the Sonoma Pines page on the strength of the street-level confirmation. |
+| ⚠️ Blocked | 2150 Alvarado Trail | Leasehold | 1 | `/2150-alvarado-trail` | No active listing in the live feed, no PublicRemarks to research from, and web search budget was exhausted this session. Could not confirm whether this is Sonoma Pines or a separate complex — do not assume, needs a fresh pass. |
+| ✅ Page live | 2160 Serrento Lane | Leasehold | 1 | `/sonoma-pines` | No active listing for this exact unit, but Serrento Lane itself is confirmed Sonoma Pines via 2148 Serrento Lane's remarks ("Welcome to Sonoma Pines"). Included on the Sonoma Pines page on street-level evidence. |
+| ✅ Page live | 2400 Hawks Boulevard | Leasehold | 1 | `/hawks-landing-boulevard` | Real name confirmed: Hawks Landing. Half-duplex townhomes, ~2000 sqft. One listing noted "No PTT" + CMHC-approved 5% down — flagged on page as needing per-unit confirmation, not assumed universal. WFN not confirmed. |
 | ⬜ Not started | 3825 Glen Canyon Drive | Freehold | 1 | `/3825-glen-canyon-drive` | |
-| ⬜ Not started | 3843 Sonoma Pines Drive | Leasehold | 1 | `/3843-sonoma-pines-drive` | |
+| ✅ Page live | 3843 Sonoma Pines Drive | Leasehold | 1 | `/sonoma-pines` | No active listing for this exact unit right now, but the street itself is literally "Sonoma Pines Drive" — unambiguous. Included on the new combined Sonoma Pines community page. |
 | ⬜ Not started | 2330 Butt Road | Leasehold | 1 | `/2330-butt-road` | |
-| ⬜ Not started | 2085 Candalera Lane | Leasehold | 1 | `/2085-candalera-lane` | |
-| ⬜ Not started | 3871 Sonoma Pines Drive | Leasehold | 1 | `/3871-sonoma-pines-drive` | |
-| ⬜ Not started | 3842 Old Okanagan Highway | Freehold | 1 | `/3842-old-okanagan-highway` | |
-| ⬜ Not started | 3767 Brown Road | Freehold | 1 | `/3767-brown-road` | |
-| ⬜ Not started | 3205 Skyview Lane | Leasehold | 1 | `/3205-skyview-lane` | |
-| ⬜ Not started | 3815 Brown Road | Freehold | 1 | `/3815-brown-road` | |
-| ⬜ Not started | 3870 Brown Road | Freehold | 1 | `/3870-brown-road` | |
-| ⬜ Not started | 2477 Ingram Road | Freehold | 1 | `/2477-ingram-road` | |
-| ⬜ Not started | 3229 Skyview Lane | Leasehold | 1 | `/3229-skyview-lane` | |
+| ✅ Page live | 2085 Candalera Lane | Leasehold | 1 | `/sonoma-pines` | Confirmed Sonoma Pines via remarks: "Welcome to Sonoma Pines, one of West Kelowna's most sought-after communities... on Two Eagles Golf Course." |
+| ✅ Page live | 3871 Sonoma Pines Drive | Leasehold | 1 | `/sonoma-pines` | Confirmed via remarks, one-level living with garage, split-bedroom design. |
+| ✅ Page live | 3842 Old Okanagan Highway | Freehold | 1 | `/mira-vista-old-okanagan-highway` | Real name found: "Mira Vista" per remarks — NOT merged with the existing Miravista/3833 Brown Road page since it's a different street and the name match alone is weak evidence; page explicitly flags the ambiguity rather than assuming they're the same complex. |
+| ✅ Page live | 3767 Brown Road | Freehold | 1 | `/lakeview-place-brown-road` | Real name confirmed: Lakeview Place. Small 55+ community, only 26 units per remarks. Freehold. |
+| ✅ Page live | 3205 Skyview Lane | Leasehold | 1 | `/copper-sky-skyview-lane` | Confirmed Copper Sky ("Building One" referenced explicitly in remarks) — merged into the existing Copper Sky page, which now covers 3205/3211/3220/3229 Skyview Lane. |
+| ✅ Page live | 3815 Brown Road | Freehold | 1 | `/leisure-terrace-brown-road` | Real name confirmed: Leisure Terrace. 55+ community. Freehold. |
+| ✅ Page live | 3870 Brown Road | Freehold | 1 | `/monticello-brown-road` | Confirmed Monticello ("Welcome to Monticello!" in remarks) — merged into the existing Monticello page, which now covers 3870 + 3890 Brown Road. |
+| ✅ Page live | 2477 Ingram Road | Freehold | 1 | `/2477-ingram-road` | No distinct marketed name found — described in remarks only as a "well-maintained 55+ adult-oriented complex." Freehold. |
+| ✅ Page live | 3229 Skyview Lane | Leasehold | 1 | `/copper-sky-skyview-lane` | Confirmed Copper Sky Resort per remarks — merged into the existing Copper Sky page. |
 
 ### Westside Road (1 complexes)
 

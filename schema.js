@@ -82,6 +82,13 @@
     '/paramount-peak': 'Paramount Peak',
     '/era-shannon-lake': 'ERA',
     '/casa-loma-lakeshore-resort': 'Casa Loma Lakeshore Resort',
+    '/neo-majoros-road': 'NEO',
+    '/2477-ingram-road': '2477 Ingram Road',
+    '/lakeview-place-brown-road': 'Lakeview Place',
+    '/leisure-terrace-brown-road': 'Leisure Terrace',
+    '/hawks-landing-boulevard': 'Hawks Landing',
+    '/mira-vista-old-okanagan-highway': 'Mira Vista',
+    '/sonoma-pines': 'Sonoma Pines',
     '/shelter-bay': 'Shelter Bay',
     '/barona-beach': 'Barona Beach',
     '/sundance-ridge': 'Sundance Ridge'
