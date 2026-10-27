@@ -10,11 +10,11 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ⬜ Not started | 2760 Olalla Road | Freehold | 9 | `/2760-olalla-road` | |
-| ⬜ Not started | 2780 Olalla Road | Freehold | 5 | `/2780-olalla-road` | |
-| ⬜ Not started | 2100 Campbell Place | Leasehold | 3 | `/2100-campbell-place` | |
-| ⬜ Not started | 2777 Casa Loma Road | Freehold | 2 | `/2777-casa-loma-road` | |
-| ⬜ Not started | 4026 Pritchard Drive N | Freehold | 2 | `/4026-pritchard-drive-n` | |
+| ✅ Page live | 2760 Olalla Road | Freehold | 9 | `/2760-olalla-road` | Combined with 2780 Olalla Road as one dev: "The Residences at Lakeview Village" (`/residences-at-lakeview-village`), 14 live listings matched |
+| ✅ Page live | 2780 Olalla Road | Freehold | 5 | `/2780-olalla-road` | See 2760 Olalla Road — same page, "The Residences at Lakeview Village" |
+| ✅ Page live | 2100 Campbell Place | Leasehold | 3 | `/2100-campbell-place` | Shelter Bay. Leasehold per MLS but NOT confirmed WFN (Lakeview Heights isn't WFN reserve land) — flagged as unconfirmed lease arrangement on page |
+| ✅ Page live | 2777 Casa Loma Road | Freehold | 2 | `/2777-casa-loma-road` | Casa Loma Lakeshore Resort — confirmed 47 suites, hotel zoning, boat slips, backs onto a provincial park (unnamed/unconfirmed which one) |
+| ✅ Page live | 4026 Pritchard Drive N | Freehold | 2 | `/4026-pritchard-drive-n` | Barona Beach — confirmed pool/hot tub/gym/dock/beach |
 | ⬜ Not started | 4024 Pritchard Drive | Freehold | 1 | `/4024-pritchard-drive` | |
 | ⬜ Not started | 2754 Cameron Road | Freehold | 1 | `/2754-cameron-road` | |
 | ⬜ Not started | 4034 Pritchard Drive | Freehold | 1 | `/4034-pritchard-drive` | |
@@ -23,11 +23,11 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ⬜ Not started | 2735 Shannon Lake Road | Freehold | 5 | `/2735-shannon-lake-road` | |
-| ⬜ Not started | 2490 Tuscany Drive | Freehold | 4 | `/2490-tuscany-drive` | |
+| ✅ Page live | 2735 Shannon Lake Road | Freehold | 5 | `/2735-shannon-lake-road` | West 61, new townhome community by the golf course/regional park |
+| ✅ Page live | 2490 Tuscany Drive | Freehold | 4 | `/2490-tuscany-drive` | ERA — townhomes backing onto golf course, one unit confirmed built 2016 |
 | ⬜ Not started | 2120 Shannon Ridge Drive | Freehold | 4 | `/2120-shannon-ridge-drive` | |
-| ⬜ Not started | 2509 Paramount Peak Drive | Freehold | 3 | `/2509-paramount-peak-drive` | |
-| ⬜ Not started | 1990 Upper Sundance Drive | Freehold | 3 | `/1990-upper-sundance-drive` | |
+| ✅ Page live | 2509 Paramount Peak Drive | Freehold | 3 | `/2509-paramount-peak-drive` | Paramount Peak at Tallus Ridge — new-build freehold, "Redtail" floor plan confirmed |
+| ✅ Page live | 1990 Upper Sundance Drive | Freehold | 3 | `/1990-upper-sundance-drive` | Sundance Ridge — confirmed outdoor pool/hot tub |
 | ⬜ Not started | 2470 Tuscany Drive | Freehold | 2 | `/2470-tuscany-drive` | |
 | ⬜ Not started | 2780 Auburn Road | Freehold | 2 | `/2780-auburn-road` | |
 | ⬜ Not started | 2770 Auburn Road | Freehold | 2 | `/2770-auburn-road` | |
@@ -57,16 +57,16 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ⬜ Not started | 3645 Gosset Road | Leasehold | 39 | `/3645-gosset-road` | |
-| ⬜ Not started | 2301 Carrington Road | Freehold | 7 | `/2301-carrington-road` | |
-| ⬜ Not started | 3833 Brown Road | Freehold | 6 | `/3833-brown-road` | |
-| ⬜ Not started | 4205 Gellatly Road | Freehold | 5 | `/4205-gellatly-road` | |
-| ⬜ Not started | 4025 Gellatly Road | Freehold | 5 | `/4025-gellatly-road` | |
-| ⬜ Not started | 2250 Louie Drive | Leasehold | 5 | `/2250-louie-drive` | |
-| ⬜ Not started | 2345 Butt Road | Leasehold | 5 | `/2345-butt-road` | |
-| ⬜ Not started | 3533 Carrington Road | Leasehold | 5 | `/3533-carrington-road` | |
-| ⬜ Not started | 3359 Cougar Road | Leasehold | 4 | `/3359-cougar-road` | |
-| ⬜ Not started | 3521 Carrington Road | Leasehold | 4 | `/3521-carrington-road` | |
+| ✅ Page live | 3645 Gosset Road | Leasehold | 39 | `/3645-gosset-road` | Confirmed WFN (developer explicitly references WFN business license requirement for STR). PRE-SALE, not built — 4-storey/39-unit, construction Summer 2026, completion Nov 2027. |
+| ✅ Page live | 2301 Carrington Road | Freehold | 7 | `/centro-carrington-road` | Real name confirmed via MLS remarks: Centro. Freehold. |
+| ✅ Page live | 3833 Brown Road | Freehold | 6 | `/miravista-brown-road` | Real name confirmed via MLS remarks: Miravista. Freehold. |
+| ✅ Page live | 4205 Gellatly Road | Freehold | 5 | `/the-cove-gellatly-road` | Real name confirmed: The Cove. Freehold, lakeview resort-style marketing. |
+| ✅ Page live | 4025 Gellatly Road | Freehold | 5 | `/carbury-gellatly-road` | Real name confirmed: Carbury. Built 2025, freehold, Glen Canyon/Gellatly Bay area. |
+| ✅ Page live | 2250 Louie Drive | Leasehold | 5 | `/westlake-gardens-louie-drive` | Real name confirmed: Westlake Gardens. Built 1998, gated rancher half-duplexes. Leasehold (WFN not confirmed, do not assume). |
+| ✅ Page live | 2345 Butt Road | Leasehold | 5 | `/abode-butt-road` | Real name confirmed: ABODE. Leasehold (WFN not confirmed, do not assume). Targeted at first-time buyers/downsizers. |
+| ✅ Page live | 3533 Carrington Road | Leasehold | 5 | `/aria-carrington-road` | Real name confirmed: Aria, on Two Eagles Golf Course. Combined with 3521 Carrington Road (same complex, 2 civic addresses) on one page. Leasehold — some units have paid-out land lease (no PTT/Spec Tax), others pay ongoing lease. WFN not explicitly confirmed in remarks, hedged in copy. |
+| ✅ Page live | 3359 Cougar Road | Leasehold | 4 | `/tesoro-arca-cougar-road` | Real name confirmed: Tesoro Arca. Leasehold (WFN not confirmed, do not assume). Known for oversized RV garages. |
+| ✅ Page live | 3521 Carrington Road | Leasehold | 4 | `/aria-carrington-road` | Same complex as 3533 Carrington Road — see that row. Combined onto one page (/aria-carrington-road) since both addresses are the same building (Aria). |
 | ⬜ Not started | 2210 Louie Drive | Leasehold | 3 | `/2210-louie-drive` | |
 | ⬜ Not started | 3545 Carrington Road | Leasehold | 3 | `/3545-carrington-road` | |
 | ⬜ Not started | 3220 Skyview Lane | Leasehold | 3 | `/3220-skyview-lane` | |

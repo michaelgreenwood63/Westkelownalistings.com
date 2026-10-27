@@ -51,7 +51,7 @@
   }
 
   var PAGES = {
-    '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold',
+    '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold', '/zoning': 'Zoning Guide',
     '/glenrosa': 'Glenrosa', '/shannon-lake': 'Shannon Lake', '/smith-creek': 'Smith Creek',
     '/lakeview-heights': 'Lakeview Heights', '/westbank-centre': 'Westbank Centre',
     '/west-kelowna-estates': 'West Kelowna Estates', '/westside-road': 'Westside Road',
@@ -59,7 +59,24 @@
     '/calculators': 'Calculators', '/calculators/mortgage': 'Mortgage Calculator',
     '/calculators/affordability': 'Affordability Calculator', '/calculators/land-transfer-tax': 'Property Transfer Tax Calculator',
     '/calculators/rent-vs-buy': 'Rent vs. Buy Calculator', '/calculators/net-proceeds': 'Net Proceeds Calculator',
-    '/quiz': 'Neighbourhood Quiz'
+    '/quiz': 'Neighbourhood Quiz',
+    '/westlake-gardens-louie-drive': 'Westlake Gardens',
+    '/centro-carrington-road': 'Centro',
+    '/miravista-brown-road': 'Miravista',
+    '/the-cove-gellatly-road': 'The Cove',
+    '/aria-carrington-road': 'Aria',
+    '/abode-butt-road': 'ABODE',
+    '/carbury-gellatly-road': 'Carbury',
+    '/tesoro-arca-cougar-road': 'Tesoro Arca',
+    '/3645-gosset-road': '3645 Gosset Road',
+    '/residences-at-lakeview-village': 'The Residences at Lakeview Village',
+    '/west-61': 'West 61',
+    '/paramount-peak': 'Paramount Peak',
+    '/era-shannon-lake': 'ERA',
+    '/casa-loma-lakeshore-resort': 'Casa Loma Lakeshore Resort',
+    '/shelter-bay': 'Shelter Bay',
+    '/barona-beach': 'Barona Beach',
+    '/sundance-ridge': 'Sundance Ridge'
   };
   var BLOG_POSTS = {
     '/blog/west-kelowna-seven-neighbourhoods-compared': "West Kelowna's Seven Neighbourhoods, Compared",
@@ -145,6 +162,12 @@
       ['Can I get a regular mortgage on a WFN leasehold home?', 'Usually yes, if the lease has a long term remaining. Major Canadian banks routinely finance pre-paid 99-year WFN leases with standard rates and down payment rules. Financing gets more restrictive once the remaining term drops below roughly 35-50 years.'],
       ['What happens when the 99-year lease runs out?', 'In theory, head leases can be renegotiated and extended back toward 99 years between the WFN landholder and the homeowner association, with a fair financial agreement for the remaining valuation. This isn\'t automatic, though, and should be confirmed for any specific property rather than assumed.'],
       ['Is a WFN strata the same as a regular BC strata?', 'No. WFN multi-family developments typically operate under a Society or Homeowners Corporation rather than a BC Strata Corporation under the Strata Property Act. The day-to-day function (fees, common area management, bylaws) is similar, but the legal structure is different.']
+    ],
+    '/zoning': [
+      ['Can I add a secondary suite to any house in West Kelowna?', 'In most residential zones (R1, R1L, RP1, RC1, RC2, RC3), yes, as a secondary suite inside a single detached dwelling, subject to the size, entrance, and servicing rules in Section 3.17. It\'s not permitted if the parcel already has a carriage house or a registered short-term rental. Always confirm the exact zoning of a specific parcel before assuming.'],
+      ['Can I build both a secondary suite and a carriage house on the same lot?', 'Generally no on their own, but the density tables for R1, R1L, RP1, RC1, RC2, and RC3 do permit a configuration of up to 4 dwelling units per parcel (on lots larger than 280 m²) combining a principal dwelling, a secondary suite, and a carriage house. The exact permitted combination depends on the zone and parcel specifics, confirm with the City or a qualified professional before planning a project around it.'],
+      ['Do I need a rezoning application to add a suite or carriage house?', 'Generally no, when the use is already listed as a principal or secondary use in your zone and meets the regulations table (minimum parcel size, setbacks, height, servicing). A building permit is still required. Confirm specifics with the City\'s Building and Planning Department before starting work.'],
+      ['Can I legally run an Airbnb in West Kelowna?', 'Only under the conditions in Section 3.19: you must be an owner who is also a principal resident, present overnight during the stay, with a maximum of one short-term rental use per parcel, up to four bedrooms, and no more than two adults per bedroom. This is separate from, and in addition to, BC\'s provincial short-term rental legislation.']
     ]
   };
 
