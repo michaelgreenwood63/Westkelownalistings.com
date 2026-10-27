@@ -33,13 +33,18 @@
     <a href="/#neighbourhoods">Neighbourhoods</a>
     <a href="/#listings">Listings</a>
     <a href="/#why">Why West Kelowna</a>
-    <a href="/wfn-leasehold">WFN Leasehold</a>
-    <a href="/calculators">Calculators</a>
-    <a href="/quiz">Quiz</a>
-    <a href="/history">History</a>
-    <a href="/blog">Blog</a>
     <a href="/team">Our Team</a>
     <a href="/contact">Contact</a>
+    <div class="nav-dropdown">
+      <a href="#">Learn</a>
+      <div class="nav-dropdown-menu">
+        <a href="/wfn-leasehold">WFN Leasehold</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/history">History</a>
+        <a href="/blog">Blog</a>
+      </div>
+    </div>
     <a href="/#seller" class="nav-cta">Free Evaluation</a>
   </div>
   <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -48,6 +53,7 @@
   <a href="/#neighbourhoods" onclick="toggleMenu()">Neighbourhoods</a>
   <a href="/#listings" onclick="toggleMenu()">Listings</a>
   <a href="/#why" onclick="toggleMenu()">Why West Kelowna</a>
+  <div class="mobile-menu-label">Learn</div>
   <a href="/wfn-leasehold" onclick="toggleMenu()">WFN Leasehold</a>
   <a href="/calculators" onclick="toggleMenu()">Calculators</a>
   <a href="/quiz" onclick="toggleMenu()">Quiz</a>
@@ -156,6 +162,39 @@
       <div class="eyebrow" style="justify-content:center">Active Listings</div>
       <h2 class="section-title">Homes for sale along Westside Road</h2>
       <p class="section-sub">Updated daily, straight from MLS&reg;.</p>
+    </div>
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="f-type">Type</label>
+        <select id="f-type">
+          <option value="all">All Types</option>
+          <option value="house">House</option>
+          <option value="apartment">Condo</option>
+          <option value="row">Townhome</option>
+          <option value="manufactured">Mobile Home</option>
+          <option value="duplex">Duplex</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="f-beds">Beds</label>
+        <select id="f-beds">
+          <option value="0">Any</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+          <option value="5">5+</option>
+        </select>
+      </div>
+      <div class="filter-group filter-group-price">
+        <label for="f-price-min">Price Range</label>
+        <div class="filter-price-inputs">
+          <input type="text" inputmode="numeric" id="f-price-min" placeholder="Min">
+          <span>&ndash;</span>
+          <input type="text" inputmode="numeric" id="f-price-max" placeholder="Max">
+        </div>
+      </div>
+      <button type="button" id="f-reset" class="filter-reset">Reset</button>
     </div>
     <div class="listing-grid" id="listings-container" data-reveal-group>
       <div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--muted);font-size:14px">Loading listings...</div>

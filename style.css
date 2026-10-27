@@ -119,6 +119,35 @@ nav.scrolled .nav-links a{color:var(--ink-soft)}
   background:var(--gold);transition:width .35s var(--ease);
 }
 .nav-links a:hover::after{width:100%}
+
+/* ---------- Nav dropdown ---------- */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:6px;cursor:pointer}
+.nav-dropdown>a::before{
+  content:'';width:5px;height:5px;margin-top:-2px;display:inline-block;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);transition:transform .3s var(--ease);
+}
+.nav-dropdown:hover>a::before,.nav-dropdown:focus-within>a::before,.nav-dropdown.open>a::before{
+  transform:rotate(225deg);margin-top:2px;
+}
+.nav-dropdown-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);
+  background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow-md);
+  padding:8px;min-width:200px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .25s var(--ease),transform .25s var(--ease);z-index:1010;
+}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{
+  opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a{
+  display:block;padding:10px 14px;border-radius:8px;
+  font-size:13.5px;font-weight:600;color:var(--ink);white-space:nowrap;
+}
+.nav-dropdown-menu a::after{display:none}
+.nav-dropdown-menu a:hover{background:var(--cream);color:var(--gold-dark)}
+
 .nav-cta{
   background:var(--gold);color:var(--ink)!important;
   padding:11px 22px!important;border-radius:999px;
@@ -138,6 +167,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink)}
 }
 body.menu-open{overflow:hidden}
 .mobile-menu a{color:var(--cream);font-family:'Fraunces',serif;font-size:26px}
+.mobile-menu-label{
+  color:var(--gold-light);font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;margin-top:4px;
+}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -276,6 +309,45 @@ body.menu-open{overflow:hidden}
   transform:scale(.8) rotate(-45deg);opacity:0;transition:all .4s var(--ease);
 }
 .area-card:hover .area-card-arrow{transform:scale(1) rotate(0deg);opacity:1}
+
+/* ---------- Listing filters ---------- */
+.filter-bar{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:22px;
+  margin-top:40px;padding:22px 26px;
+  background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);
+}
+.filter-group{display:flex;flex-direction:column;gap:7px}
+.filter-group label{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+}
+.filter-group select,.filter-price-inputs input{
+  font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--ink);
+  background:var(--cream);border:1.5px solid var(--border);border-radius:10px;
+  padding:10px 14px;transition:border-color .25s var(--ease);
+}
+.filter-group select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:34px;
+  background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%236f6a63' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;
+}
+.filter-group select:focus,.filter-price-inputs input:focus{outline:none;border-color:var(--gold)}
+.filter-price-inputs{display:flex;align-items:center;gap:8px}
+.filter-price-inputs input{width:92px}
+.filter-price-inputs span{color:var(--muted)}
+.filter-reset{
+  font-size:13px;font-weight:700;color:var(--gold-dark);
+  padding:10px 4px;text-decoration:underline;text-underline-offset:3px;
+  transition:color .25s var(--ease);margin-left:auto;
+}
+.filter-reset:hover{color:var(--wine)}
+@media(max-width:700px){
+  .filter-bar{gap:16px;padding:18px 20px}
+  .filter-group,.filter-group-price{width:100%}
+  .filter-group select{width:100%}
+  .filter-price-inputs{width:100%}
+  .filter-price-inputs input{width:100%;min-width:0}
+  .filter-reset{margin-left:0}
+}
 
 /* ---------- Listing cards ---------- */
 .listing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:30px;margin-top:48px}

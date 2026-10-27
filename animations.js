@@ -17,6 +17,22 @@
     document.body.classList.toggle('menu-open', m.classList.contains('open'));
   };
 
+  // ---------- Nav dropdown (tap-to-toggle, desktop also gets CSS hover) ----------
+  document.querySelectorAll('.nav-dropdown > a').forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var parent = trigger.parentElement;
+      var wasOpen = parent.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
+      if (!wasOpen) parent.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.nav-dropdown.open').forEach(function (d) {
+      if (!d.contains(e.target)) d.classList.remove('open');
+    });
+  });
+
   // ---------- Hero load-in ----------
   var hero = document.querySelector('.hero');
   if (hero) {

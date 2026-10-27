@@ -3,8 +3,13 @@
 
   var PER_PAGE = 12;
   var _allListings = [];
-  var _filters = { type: 'all' };
+  var _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0 };
   var _page = 1;
+
+  function parsePriceInput(str) {
+    var n = parseFloat(String(str || '').replace(/[^0-9.]/g, ''));
+    return isFinite(n) ? n : null;
+  }
 
   function formatPrice(price) {
     if (!price) return 'Price on Request';
@@ -75,13 +80,68 @@
     '</div>';
   }
 
+  function matchesTypeFilter(l, filterType) {
+    if (filterType === 'all') return true;
+    var st = structureType(l).toLowerCase();
+    switch (filterType) {
+      case 'house': return st.indexOf('single family') !== -1 || (st.indexOf('house') !== -1 && st.indexOf('town') === -1);
+      case 'apartment': return st.indexOf('apartment') !== -1;
+      case 'row': return st.indexOf('row') !== -1 || st.indexOf('town') !== -1;
+      case 'manufactured': return st.indexOf('manufactured') !== -1;
+      case 'duplex': return st.indexOf('duplex') !== -1;
+      default: return true;
+    }
+  }
+
   function applyFilters(listings) {
     return listings.filter(function (l) {
-      if (_filters.type !== 'all') {
-        var pt = structureType(l).toLowerCase();
-        if (!pt.includes(_filters.type.toLowerCase())) return false;
-      }
+      if (!matchesTypeFilter(l, _filters.type)) return false;
+      var price = l.ListPrice || 0;
+      if (price < _filters.minPrice) return false;
+      if (price > _filters.maxPrice) return false;
+      if ((l.BedroomsTotal || 0) < _filters.minBeds) return false;
       return true;
+    });
+  }
+
+  function initFilterBar() {
+    var typeEl = document.getElementById('f-type');
+    var bedsEl = document.getElementById('f-beds');
+    var minEl = document.getElementById('f-price-min');
+    var maxEl = document.getElementById('f-price-max');
+    var resetEl = document.getElementById('f-reset');
+    if (!typeEl && !bedsEl && !minEl && !maxEl) return;
+
+    function refresh() {
+      _page = 1;
+      renderInto('listings-container', 'listings-pagination', _allListings, 'No active listings match these filters.');
+    }
+
+    if (typeEl) typeEl.addEventListener('change', function () {
+      _filters.type = typeEl.value;
+      refresh();
+    });
+    if (bedsEl) bedsEl.addEventListener('change', function () {
+      _filters.minBeds = parseInt(bedsEl.value, 10) || 0;
+      refresh();
+    });
+    if (minEl) minEl.addEventListener('input', function () {
+      var v = parsePriceInput(minEl.value);
+      _filters.minPrice = v === null ? 0 : v;
+      refresh();
+    });
+    if (maxEl) maxEl.addEventListener('input', function () {
+      var v = parsePriceInput(maxEl.value);
+      _filters.maxPrice = v === null ? Infinity : v;
+      refresh();
+    });
+    if (resetEl) resetEl.addEventListener('click', function () {
+      _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0 };
+      if (typeEl) typeEl.value = 'all';
+      if (bedsEl) bedsEl.value = '0';
+      if (minEl) minEl.value = '';
+      if (maxEl) maxEl.value = '';
+      refresh();
     });
   }
 
@@ -167,9 +227,14 @@
       });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadListings);
-  } else {
+  function init() {
+    initFilterBar();
     loadListings();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
