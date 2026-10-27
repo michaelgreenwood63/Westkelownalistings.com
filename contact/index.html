@@ -93,8 +93,6 @@
     <div data-reveal="right">
       <div class="eyebrow">Send a Message</div>
       <div style="margin-top:16px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm)">
-        <div data-fs-success class="lead-success" style="display:none;margin-bottom:16px">&#10003; Message sent. We'll be in touch within one business day.</div>
-        <div data-fs-error class="lead-form-error" style="display:none;margin-bottom:16px;color:#b3443f">Something went wrong. Please call <a href="tel:12508616002" style="color:var(--gold-dark)">250-861-6002</a>.</div>
         <form class="lead-form" data-lead-form action="https://formspree.io/f/mppqgrro" method="POST">
           <div class="lead-form-fields" style="display:flex;flex-direction:column;gap:14px">
             <div class="lead-row">
@@ -105,6 +103,8 @@
             <div class="lead-field"><label style="color:var(--ink-soft)">Message <span>(optional)</span></label><textarea name="message" rows="4" placeholder="What are you looking for?" style="width:100%;padding:13px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--cream-deep);color:var(--ink);font-family:inherit;font-size:14.5px"></textarea></div>
             <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:6px">Send Message &rarr;</button>
           </div>
+          <div class="lead-success" style="margin-top:16px;color:var(--gold-dark)">&#10003; Message sent. We'll be in touch within one business day.</div>
+          <div class="lead-form-error" style="margin-top:16px;color:#b3443f">Something went wrong. Please call <a href="tel:12508616002" style="color:var(--gold-dark)">250-861-6002</a>.</div>
         </form>
       </div>
     </div>
