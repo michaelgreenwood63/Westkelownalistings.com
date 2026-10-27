@@ -15,9 +15,9 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 2100 Campbell Place | Leasehold | 3 | `/2100-campbell-place` | Shelter Bay. Leasehold per MLS but NOT confirmed WFN (Lakeview Heights isn't WFN reserve land) — flagged as unconfirmed lease arrangement on page |
 | ✅ Page live | 2777 Casa Loma Road | Freehold | 2 | `/2777-casa-loma-road` | Casa Loma Lakeshore Resort — confirmed 47 suites, hotel zoning, boat slips, backs onto a provincial park (unnamed/unconfirmed which one) |
 | ✅ Page live | 4026 Pritchard Drive N | Freehold | 2 | `/4026-pritchard-drive-n` | Barona Beach — confirmed pool/hot tub/gym/dock/beach |
-| ⬜ Not started | 4024 Pritchard Drive | Freehold | 1 | `/4024-pritchard-drive` | |
-| ⬜ Not started | 2754 Cameron Road | Freehold | 1 | `/2754-cameron-road` | |
-| ⬜ Not started | 4034 Pritchard Drive | Freehold | 1 | `/4034-pritchard-drive` | |
+| ✅ Page live | 4024 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4026/4034 Pritchard Dr N (Barona Beach) via matching remarks. Freehold. |
+| ✅ Page live | 2754 Cameron Road | Freehold | 1 | `/2754-cameron-road` | No distinct name found. Freehold, rancher + daylight walkout basement, NO age restriction. |
+| ✅ Page live | 4034 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4024/4026 Pritchard Dr N (Barona Beach) via explicit remarks: "1 of only 4 complexes allowing short-term rentals in West Kelowna." Freehold. |
 
 ### Shannon Lake (20 complexes)
 
@@ -32,26 +32,26 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 2780 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Terravita — gated community beside Shannon Lake Golf Course. Combined with 2760+2770 Auburn Road, same complex, 3 civic addresses confirmed via matching MLS remarks. |
 | ✅ Page live | 2770 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Same complex as 2780/2760 Auburn Road — see that row. Terravita. |
 | ✅ Page live | 2760 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Same complex as 2780/2770 Auburn Road — see that row. Terravita. |
-| ⬜ Not started | 2749 Shannon Lake Road | Freehold | 1 | `/2749-shannon-lake-road` | |
-| ⬜ Not started | 2161 Upper Sundance Drive | Freehold | 1 | `/2161-upper-sundance-drive` | |
-| ⬜ Not started | 3275 Broadview Road | Freehold | 1 | `/3275-broadview-road` | |
-| ⬜ Not started | 2175 Shannon Ridge Drive | Freehold | 1 | `/2175-shannon-ridge-drive` | |
-| ⬜ Not started | 2283 Shannon Heights Court | Freehold | 1 | `/2283-shannon-heights-court` | |
-| ⬜ Not started | 2218 Golf Course Drive | Freehold | 1 | `/2218-golf-course-drive` | |
-| ⬜ Not started | 2226 Golf Course Drive | Freehold | 1 | `/2226-golf-course-drive` | |
-| ⬜ Not started | 2210 Upper Sundance Drive | Freehold | 1 | `/2210-upper-sundance-drive` | |
-| ⬜ Not started | 2377 Shannon Woods Drive | Freehold | 1 | `/2377-shannon-woods-drive` | |
-| ⬜ Not started | 2523 Shannon View Drive | Freehold | 1 | `/2523-shannon-view-drive` | |
-| ⬜ Not started | 2750 Auburn Road | Freehold | 1 | `/2750-auburn-road` | |
+| ✅ Page live | 2749 Shannon Lake Road | Freehold | 1 | `/2749-shannon-lake-road` | No distinct building name found. Freehold, lakefront, ~120ft shared dock. Separate from West 61 (2735 Shannon Lake Road). |
+| ✅ Page live | 2161 Upper Sundance Drive | Freehold | 1 | `/2161-upper-sundance-drive` | No distinct name found. Freehold, one-level/no-stairs unit. Separate from Sundance Ridge (1990) and 2210 Upper Sundance. |
+| ✅ Page live | 3275 Broadview Road | Freehold | 1 | `/creekside-park-broadview-road` | Real name confirmed: Creekside Park. Freehold, small 3-level townhome development. |
+| ✅ Page live | 2175 Shannon Ridge Drive | Freehold | 1 | `/2175-shannon-ridge-drive` | No distinct name found. Freehold. Separate from 2120 Shannon Ridge Drive (different civic number). |
+| ✅ Page live | 2283 Shannon Heights Court | Freehold | 1 | `/2283-shannon-heights-court` | No distinct name found. Freehold, intimate 20-home complex bordering golf course, pet-friendly. |
+| ✅ Page live | 2218 Golf Course Drive | Freehold | 1 | `/2218-golf-course-drive` | No distinct name found. Freehold. Separate complex from 2226 Golf Course Drive. |
+| ✅ Page live | 2226 Golf Course Drive | Freehold | 1 | `/2226-golf-course-drive` | No distinct name found. Freehold. Separate complex from 2218 Golf Course Drive. |
+| ✅ Page live | 2210 Upper Sundance Drive | Freehold | 1 | `/2210-upper-sundance-drive` | No distinct name found. Freehold. Separate from Sundance Ridge (1990) and 2161 Upper Sundance. |
+| ✅ Page live | 2377 Shannon Woods Drive | Freehold | 1 | `/shannon-woods` | Real name confirmed: Shannon Woods. Freehold, gated, NO age restriction (unlike several nearby 45+/55+ complexes). |
+| ✅ Page live | 2523 Shannon View Drive | Freehold | 1 | `/2523-shannon-view-drive` | No distinct name found. Freehold. |
+| ✅ Page live | 2750 Auburn Road | Freehold | 1 | `/terravita-auburn-road` | Confirmed same complex as 2760/2770/2780 Auburn Rd (Terravita) via "Welcome to Terravita" in remarks. Freehold. |
 
 ### West Kelowna Estates (4 complexes)
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ⬜ Not started | 3000 Ariva Drive | Leasehold | 4 | `/3000-ariva-drive` | |
-| ⬜ Not started | 1818 Peak Point Court | Freehold | 3 | `/1818-peak-point-court` | |
-| ⬜ Not started | 1870 Rosealee Lane | Freehold | 1 | `/1870-rosealee-lane` | |
-| ⬜ Not started | 1451 Rose Meadow Drive | Freehold | 1 | `/1451-rose-meadow-drive` | |
+| ✅ Page live | 3000 Ariva Drive | Leasehold | 4 | `/ariva` | Real name confirmed: Ariva. Leasehold, resort-style amenities (bistro, lounge, gym, pool, pickleball). WFN not confirmed, do not assume. |
+| ✅ Page live | 1818 Peak Point Court | Freehold | 3 | `/lakeview-terraces-peak-point-court` | Real name confirmed: Lakeview Terraces. Freehold, Gold Tommie Award winner, Rose Valley. |
+| ✅ Page live | 1870 Rosealee Lane | Freehold | 1 | `/kara-vista-rosealee-lane` | Real name confirmed: Kara Vista. Freehold, hillside, designed around natural landscape. |
+| ✅ Page live | 1451 Rose Meadow Drive | Freehold | 1 | `/1451-rose-meadow-drive` | No distinct name found. Freehold, end-unit townhome. |
 
 ### Westbank Centre (38 complexes)
 
@@ -67,8 +67,8 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 3533 Carrington Road | Leasehold | 5 | `/aria-carrington-road` | Real name confirmed: Aria, on Two Eagles Golf Course. Combined with 3521 Carrington Road (same complex, 2 civic addresses) on one page. Leasehold — some units have paid-out land lease (no PTT/Spec Tax), others pay ongoing lease. WFN not explicitly confirmed in remarks, hedged in copy. |
 | ✅ Page live | 3359 Cougar Road | Leasehold | 4 | `/tesoro-arca-cougar-road` | Real name confirmed: Tesoro Arca. Leasehold (WFN not confirmed, do not assume). Known for oversized RV garages. |
 | ✅ Page live | 3521 Carrington Road | Leasehold | 4 | `/aria-carrington-road` | Same complex as 3533 Carrington Road — see that row. Combined onto one page (/aria-carrington-road) since both addresses are the same building (Aria). |
-| ⬜ Not started | 2210 Louie Drive | Leasehold | 3 | `/2210-louie-drive` | |
-| ⬜ Not started | 3545 Carrington Road | Leasehold | 3 | `/3545-carrington-road` | |
+| ✅ Page live | 2210 Louie Drive | Leasehold | 3 | `/grandview-terrace-louie-drive` | Real name confirmed: Grandview Terrace. Leasehold, WFN not confirmed. Distinct from Westlake Gardens (2250 Louie Drive). |
+| ✅ Page live | 3545 Carrington Road | Leasehold | 3 | `/aria-carrington-road` | Confirmed same complex as 3521/3533 Carrington Rd (Aria) via remarks: "Aria is a development of 3 beautiful buildings." Leasehold, WFN not confirmed. |
 | ✅ Page live | 3220 Skyview Lane | Leasehold | 3 | `/copper-sky-skyview-lane` | Real name confirmed: Copper Sky. Combined with 3211 Skyview Lane, same complex (same amenity building described in both). Resort-style amenities (pool/hot tub/steam/sauna/gym/sport courts). Leasehold, WFN not confirmed. Now also covers 3205 + 3229 Skyview Lane (merged, same complex confirmed via remarks). |
 | ✅ Page live | 3645 Carrington Road | Freehold | 3 | `/lakewind-carrington-road` | Real name confirmed: Lakewind. Freehold apartment near Two Eagles Golf Course. |
 | ✅ Page live | 2070 Boucherie Road | Leasehold | 2 | `/tuscany-villas-boucherie-road` | Real name confirmed: Tuscany Villas. Leasehold (WFN not confirmed, do not assume). Lake/mountain views, poolside, dual-primary layouts. |
@@ -78,14 +78,14 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 2433 Ingram Road | Freehold | 2 | `/2433-ingram-road` | No distinct marketed name found. Freehold bare land strata, includes a 55+ section. |
 | ⚠️ Blocked | 3050 Seclusion Bay Road | Leasehold/Other | 2 | `/3050-seclusion-bay-road` | No active listings in the live DDF feed (the 2 listings from the Oct PDF export appear to have sold/expired) and no PublicRemarks text available to research from — insufficient material to build a verified page right now. Revisit if new listings appear, or research via web search specifically. |
 | ✅ Page live | 2151 Madera Court | Leasehold | 1 | `/sonoma-pines` | Part of Sonoma Pines (confirmed via remarks: "Many Sonoma Pines walkouts..."). See Sonoma Pines row below for full notes. |
-| ⬜ Not started | 2100 Boucherie Road | Freehold | 1 | `/2100-boucherie-road` | |
+| ✅ Page live | 2100 Boucherie Road | Freehold | 1 | `/bay-vista-boucherie-road` | Real name confirmed: Bay Vista. Freehold, gated, semi-detached. Distinct from Tuscany Villas (2070 Boucherie Road). |
 | ✅ Page live | 2135 Madera Court | Leasehold | 1 | `/sonoma-pines` | Same street as confirmed Sonoma Pines address (2151 Madera Court) — no active listing to directly verify this specific unit, included on the Sonoma Pines page on the strength of the street-level confirmation. |
 | ⚠️ Blocked | 2150 Alvarado Trail | Leasehold | 1 | `/2150-alvarado-trail` | No active listing in the live feed, no PublicRemarks to research from, and web search budget was exhausted this session. Could not confirm whether this is Sonoma Pines or a separate complex — do not assume, needs a fresh pass. |
 | ✅ Page live | 2160 Serrento Lane | Leasehold | 1 | `/sonoma-pines` | No active listing for this exact unit, but Serrento Lane itself is confirmed Sonoma Pines via 2148 Serrento Lane's remarks ("Welcome to Sonoma Pines"). Included on the Sonoma Pines page on street-level evidence. |
 | ✅ Page live | 2400 Hawks Boulevard | Leasehold | 1 | `/hawks-landing-boulevard` | Real name confirmed: Hawks Landing. Half-duplex townhomes, ~2000 sqft. One listing noted "No PTT" + CMHC-approved 5% down — flagged on page as needing per-unit confirmation, not assumed universal. WFN not confirmed. |
-| ⬜ Not started | 3825 Glen Canyon Drive | Freehold | 1 | `/3825-glen-canyon-drive` | |
+| ✅ Page live | 3825 Glen Canyon Drive | Freehold | 1 | `/3825-glen-canyon-drive` | No distinct name found. Freehold, low strata fees, backs onto ravine. |
 | ✅ Page live | 3843 Sonoma Pines Drive | Leasehold | 1 | `/sonoma-pines` | No active listing for this exact unit right now, but the street itself is literally "Sonoma Pines Drive" — unambiguous. Included on the new combined Sonoma Pines community page. |
-| ⬜ Not started | 2330 Butt Road | Leasehold | 1 | `/2330-butt-road` | |
+| ✅ Page live | 2330 Butt Road | Leasehold | 1 | `/sun-village-butt-road` | Real name confirmed: Sun Village. 45+ gated community. Several units marketed with prepaid/paid-off lease (per-unit, not building-wide). WFN not confirmed, do not assume. |
 | ✅ Page live | 2085 Candalera Lane | Leasehold | 1 | `/sonoma-pines` | Confirmed Sonoma Pines via remarks: "Welcome to Sonoma Pines, one of West Kelowna's most sought-after communities... on Two Eagles Golf Course." |
 | ✅ Page live | 3871 Sonoma Pines Drive | Leasehold | 1 | `/sonoma-pines` | Confirmed via remarks, one-level living with garage, split-bedroom design. |
 | ✅ Page live | 3842 Old Okanagan Highway | Freehold | 1 | `/mira-vista-old-okanagan-highway` | Real name found: "Mira Vista" per remarks — NOT merged with the existing Miravista/3833 Brown Road page since it's a different street and the name match alone is weak evidence; page explicitly flags the ambiguity rather than assuming they're the same complex. |
@@ -100,7 +100,7 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ⬜ Not started | 4215 Westside Road | Freehold | 1 | `/4215-westside-road` | |
+| ⚠️ Blocked | 4215 Westside Road | Freehold | 1 | `/4215-westside-road` | Zero active listings currently (sold since original MLS export snapshot) and no PublicRemarks available to research from. Revisit if a new listing appears. |
 
 ---
 
