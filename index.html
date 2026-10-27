@@ -122,14 +122,16 @@
       var mapEl = document.getElementById('area-map');
       if (!mapEl || typeof L === 'undefined') return;
 
-      // Approximate neighbourhood centre points, not surveyed boundaries.
+      // Smith Creek and West Kelowna Estates are pinned to specific civic
+      // addresses (3133 Smith Creek Rd, 1792 Keloka Dr) per Michael; the
+      // rest are approximate neighbourhood centre points, not surveyed.
       var areas = [
         {name:"Lakeview Heights", url:"/lakeview-heights", lat:49.8602, lng:-119.5515},
         {name:"Glenrosa", url:"/glenrosa", lat:49.8388, lng:-119.6624},
         {name:"Shannon Lake", url:"/shannon-lake", lat:49.8543, lng:-119.6104},
-        {name:"Smith Creek", url:"/smith-creek", lat:49.8602, lng:-119.6456},
+        {name:"Smith Creek", url:"/smith-creek", lat:49.8499133, lng:-119.6405091},
         {name:"Westbank Centre", url:"/westbank-centre", lat:49.8309, lng:-119.6289},
-        {name:"West Kelowna Estates", url:"/west-kelowna-estates", lat:49.8741, lng:-119.5435},
+        {name:"West Kelowna Estates", url:"/west-kelowna-estates", lat:49.8864332, lng:-119.5545448},
         {name:"Westside Road", url:"/westside-road", lat:49.9020, lng:-119.5391}
       ];
 
