@@ -25,13 +25,13 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 |---|---|---|---|---|---|
 | ✅ Page live | 2735 Shannon Lake Road | Freehold | 5 | `/2735-shannon-lake-road` | West 61, new townhome community by the golf course/regional park |
 | ✅ Page live | 2490 Tuscany Drive | Freehold | 4 | `/2490-tuscany-drive` | ERA — townhomes backing onto golf course, one unit confirmed built 2016 |
-| ⬜ Not started | 2120 Shannon Ridge Drive | Freehold | 4 | `/2120-shannon-ridge-drive` | |
+| ✅ Page live | 2120 Shannon Ridge Drive | Freehold | 4 | `/2120-shannon-ridge-drive` | No distinct marketed name found — generic "Shannon Lake condo" in listings. Fitness room + guest suite confirmed. |
 | ✅ Page live | 2509 Paramount Peak Drive | Freehold | 3 | `/2509-paramount-peak-drive` | Paramount Peak at Tallus Ridge — new-build freehold, "Redtail" floor plan confirmed |
 | ✅ Page live | 1990 Upper Sundance Drive | Freehold | 3 | `/1990-upper-sundance-drive` | Sundance Ridge — confirmed outdoor pool/hot tub |
-| ⬜ Not started | 2470 Tuscany Drive | Freehold | 2 | `/2470-tuscany-drive` | |
-| ⬜ Not started | 2780 Auburn Road | Freehold | 2 | `/2780-auburn-road` | |
-| ⬜ Not started | 2770 Auburn Road | Freehold | 2 | `/2770-auburn-road` | |
-| ⬜ Not started | 2760 Auburn Road | Freehold | 2 | `/2760-auburn-road` | |
+| ✅ Page live | 2470 Tuscany Drive | Freehold | 2 | `/eagle-terrace-tuscany-drive` | Real name confirmed: Eagle Terrace. Overlooks Shannon Lake Golf Course, marketed to downsizers. |
+| ✅ Page live | 2780 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Terravita — gated community beside Shannon Lake Golf Course. Combined with 2760+2770 Auburn Road, same complex, 3 civic addresses confirmed via matching MLS remarks. |
+| ✅ Page live | 2770 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Same complex as 2780/2760 Auburn Road — see that row. Terravita. |
+| ✅ Page live | 2760 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Same complex as 2780/2770 Auburn Road — see that row. Terravita. |
 | ⬜ Not started | 2749 Shannon Lake Road | Freehold | 1 | `/2749-shannon-lake-road` | |
 | ⬜ Not started | 2161 Upper Sundance Drive | Freehold | 1 | `/2161-upper-sundance-drive` | |
 | ⬜ Not started | 3275 Broadview Road | Freehold | 1 | `/3275-broadview-road` | |
@@ -69,14 +69,14 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 3521 Carrington Road | Leasehold | 4 | `/aria-carrington-road` | Same complex as 3533 Carrington Road — see that row. Combined onto one page (/aria-carrington-road) since both addresses are the same building (Aria). |
 | ⬜ Not started | 2210 Louie Drive | Leasehold | 3 | `/2210-louie-drive` | |
 | ⬜ Not started | 3545 Carrington Road | Leasehold | 3 | `/3545-carrington-road` | |
-| ⬜ Not started | 3220 Skyview Lane | Leasehold | 3 | `/3220-skyview-lane` | |
-| ⬜ Not started | 3645 Carrington Road | Freehold | 3 | `/3645-carrington-road` | |
-| ⬜ Not started | 2070 Boucherie Road | Leasehold | 2 | `/2070-boucherie-road` | |
-| ⬜ Not started | 3211 Skyview Lane | Leasehold | 2 | `/3211-skyview-lane` | |
-| ⬜ Not started | 3890 Brown Road | Freehold | 2 | `/3890-brown-road` | |
+| ✅ Page live | 3220 Skyview Lane | Leasehold | 3 | `/copper-sky-skyview-lane` | Real name confirmed: Copper Sky. Combined with 3211 Skyview Lane, same complex (same amenity building described in both). Resort-style amenities (pool/hot tub/steam/sauna/gym/sport courts). Leasehold, WFN not confirmed. NOTE: 3205 + 3229 Skyview Lane (elsewhere in this tracker) are very likely also Copper Sky — not yet merged onto this page, worth confirming and combining in a future pass. |
+| ✅ Page live | 3645 Carrington Road | Freehold | 3 | `/lakewind-carrington-road` | Real name confirmed: Lakewind. Freehold apartment near Two Eagles Golf Course. |
+| ✅ Page live | 2070 Boucherie Road | Leasehold | 2 | `/tuscany-villas-boucherie-road` | Real name confirmed: Tuscany Villas. Leasehold (WFN not confirmed, do not assume). Lake/mountain views, poolside, dual-primary layouts. |
+| ✅ Page live | 3211 Skyview Lane | Leasehold | 2 | `/copper-sky-skyview-lane` | Same complex as 3220 Skyview Lane — see that row. Copper Sky. |
+| ✅ Page live | 3890 Brown Road | Freehold | 2 | `/monticello-brown-road` | Real name confirmed: Monticello. 55+ community, clubhouse/workshop/community garden/guest suite, pet-friendly. |
 | ⬜ Not started | 2250 Majoros Road | Freehold | 2 | `/2250-majoros-road` | |
-| ⬜ Not started | 2433 Ingram Road | Freehold | 2 | `/2433-ingram-road` | |
-| ⬜ Not started | 3050 Seclusion Bay Road | Leasehold/Other | 2 | `/3050-seclusion-bay-road` | |
+| ✅ Page live | 2433 Ingram Road | Freehold | 2 | `/2433-ingram-road` | No distinct marketed name found. Freehold bare land strata, includes a 55+ section. |
+| ⚠️ Blocked | 3050 Seclusion Bay Road | Leasehold/Other | 2 | `/3050-seclusion-bay-road` | No active listings in the live DDF feed (the 2 listings from the Oct PDF export appear to have sold/expired) and no PublicRemarks text available to research from — insufficient material to build a verified page right now. Revisit if new listings appear, or research via web search specifically. |
 | ⬜ Not started | 2151 Madera Court | Leasehold | 1 | `/2151-madera-court` | |
 | ⬜ Not started | 2100 Boucherie Road | Freehold | 1 | `/2100-boucherie-road` | |
 | ⬜ Not started | 2135 Madera Court | Leasehold | 1 | `/2135-madera-court` | |
