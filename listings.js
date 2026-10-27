@@ -223,6 +223,45 @@
     if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  // "Our Listings" — Mark Jontz & Associates' own listings, pulled from the
+  // same shared hub feed every ownX/westkelownalistings page already uses
+  // (ListAgentFullName is already selected server-side, no API changes
+  // needed — see memory on the agent-filter incident before touching the
+  // hub's $select list). Client-side only; section stays hidden if empty.
+  var OUR_AGENTS = ['Mark Jontz', 'Michael Greenwood'];
+
+  function renderOurListings(listings) {
+    var section = document.getElementById('our-listings');
+    var container = document.getElementById('our-listings-container');
+    if (!section || !container) return;
+
+    var mine = listings.filter(function (l) { return OUR_AGENTS.indexOf(l.ListAgentFullName) !== -1; });
+
+    // De-dupe by ListingKey, then defensively by address+price (seen before:
+    // the same physical listing appearing twice under two MLS numbers).
+    var seenKeys = {}, seenAddr = {}, deduped = [];
+    mine.sort(function (a, b) { return new Date(b.OriginalEntryTimestamp || 0) - new Date(a.OriginalEntryTimestamp || 0); });
+    mine.forEach(function (l) {
+      var key = l.ListingKey;
+      var unit = l.UnitNumber ? 'Unit ' + l.UnitNumber + ', ' : '';
+      var addr = (unit + (l.StreetNumber || '') + ' ' + (l.StreetName || '') + ' ' + (l.StreetSuffix || '')).trim();
+      var addrKey = addr.toLowerCase() + '|' + l.ListPrice;
+      if (seenKeys[key] || seenAddr[addrKey]) return;
+      seenKeys[key] = true;
+      seenAddr[addrKey] = true;
+      deduped.push(l);
+    });
+
+    if (!deduped.length) { section.style.display = 'none'; return; }
+    container.innerHTML = deduped.map(renderCard).join('');
+    container.querySelectorAll('.listing-card[data-key]').forEach(function (card) {
+      var key = card.getAttribute('data-key');
+      if (!key) return;
+      card.addEventListener('click', function () { window.location.href = '/listing?id=' + encodeURIComponent(key); });
+    });
+    section.style.display = '';
+  }
+
   function loadListings() {
     var container = document.getElementById('listings-container');
     if (!container) return;
@@ -239,6 +278,7 @@
           return;
         }
         _allListings = data.listings || [];
+        renderOurListings(_allListings);
         if (_allListings.length === 0) {
           container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)">No active listings right now. <a href="/contact">Contact us</a> to get notified when something hits the market.</p>';
           return;
