@@ -275,6 +275,9 @@ body.menu-open{overflow:hidden}
 .section-alt{background:var(--white)}
 .section-dark{background:var(--ink);color:var(--cream)}
 .section-dark h2,.section-dark h3{color:var(--cream)}
+.section-dark .eyebrow,.lead-section .eyebrow{color:var(--gold-light)}
+.section-dark .eyebrow::before,.lead-section .eyebrow::before{background:var(--gold-light)}
+.section-dark .section-sub{color:rgba(250,246,239,.78)}
 .section-inner{max-width:1240px;margin:0 auto}
 .section-head{max-width:640px;margin-bottom:56px}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
