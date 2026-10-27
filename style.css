@@ -282,6 +282,15 @@ body.menu-open{overflow:hidden}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.75;margin-top:16px;max-width:560px}
 .section-head.center .section-sub{margin-left:auto;margin-right:auto}
 
+/* ---------- Neighbourhood area map ---------- */
+.area-map{
+  height:460px;margin-top:40px;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-md);border:1px solid var(--border);position:relative;z-index:0;
+}
+.area-map .leaflet-popup-content-wrapper{border-radius:10px}
+.area-map .leaflet-popup-content{margin:12px 14px}
+@media(max-width:700px){.area-map{height:340px}}
+
 /* ---------- Neighbourhood / area cards ---------- */
 .area-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;margin-top:48px}
 .area-card{

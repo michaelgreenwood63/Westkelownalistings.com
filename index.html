@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="/style.css">
 <script src="/schema.js" defer></script>
 <script src="/animations.js" defer></script>
@@ -114,6 +115,49 @@
       <h2 class="section-title">West Kelowna's seven distinct pockets</h2>
       <p class="section-sub">From vineyard-view benches to lakefront walking paths, every pocket of West Kelowna has its own character.</p>
     </div>
+    <div id="area-map" class="area-map" data-reveal></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+    (function(){
+      var mapEl = document.getElementById('area-map');
+      if (!mapEl || typeof L === 'undefined') return;
+
+      // Approximate neighbourhood centre points, not surveyed boundaries.
+      var areas = [
+        {name:"Lakeview Heights", url:"/lakeview-heights", lat:49.8602, lng:-119.5515},
+        {name:"Glenrosa", url:"/glenrosa", lat:49.8388, lng:-119.6624},
+        {name:"Shannon Lake", url:"/shannon-lake", lat:49.8543, lng:-119.6104},
+        {name:"Smith Creek", url:"/smith-creek", lat:49.8602, lng:-119.6456},
+        {name:"Westbank Centre", url:"/westbank-centre", lat:49.8309, lng:-119.6289},
+        {name:"West Kelowna Estates", url:"/west-kelowna-estates", lat:49.8741, lng:-119.5435},
+        {name:"Westside Road", url:"/westside-road", lat:49.9020, lng:-119.5391}
+      ];
+
+      var map = L.map('area-map', {scrollWheelZoom:false});
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      function pinIcon(){
+        return L.divIcon({
+          className: '',
+          html: '<div style="background:#c6903f;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 2px 6px rgba(22,25,29,.35)"></div>',
+          iconSize: [18,18],
+          iconAnchor: [9,18],
+          popupAnchor: [0,-18]
+        });
+      }
+
+      var bounds = [];
+      areas.forEach(function(a){
+        var marker = L.marker([a.lat, a.lng], {icon: pinIcon()}).addTo(map);
+        marker.bindPopup('<div style="font-family:\'Manrope\',sans-serif"><strong style="font-family:\'Fraunces\',serif;font-size:15px">'+a.name+'</strong><br><a href="'+a.url+'" style="font-size:13px;font-weight:700;color:#9c6f2c;text-decoration:none">Explore '+a.name+' &rarr;</a></div>');
+        bounds.push([a.lat, a.lng]);
+      });
+      map.fitBounds(bounds, {padding:[36,36]});
+    })();
+    </script>
     <div class="area-grid" data-reveal-group>
       <a href="/lakeview-heights" class="area-card" data-reveal>
         <img src="/images/hero-lakeview-heights.jpg" alt="Lakeview Heights vineyards">
