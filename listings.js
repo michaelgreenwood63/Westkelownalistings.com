@@ -3,7 +3,7 @@
 
   var PER_PAGE = 12;
   var _allListings = [];
-  var _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0 };
+  var _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0, minBaths: 0 };
   var _page = 1;
 
   function parsePriceInput(str) {
@@ -100,6 +100,7 @@
       if (price < _filters.minPrice) return false;
       if (price > _filters.maxPrice) return false;
       if ((l.BedroomsTotal || 0) < _filters.minBeds) return false;
+      if ((l.BathroomsTotalInteger || 0) < _filters.minBaths) return false;
       return true;
     });
   }
@@ -107,14 +108,25 @@
   function initFilterBar() {
     var typeEl = document.getElementById('f-type');
     var bedsEl = document.getElementById('f-beds');
+    var bathsEl = document.getElementById('f-baths');
     var minEl = document.getElementById('f-price-min');
     var maxEl = document.getElementById('f-price-max');
     var resetEl = document.getElementById('f-reset');
-    if (!typeEl && !bedsEl && !minEl && !maxEl) return;
+    if (!typeEl && !bedsEl && !bathsEl && !minEl && !maxEl) return;
+
+    var debounceTimer = null;
 
     function refresh() {
       _page = 1;
       renderInto('listings-container', 'listings-pagination', _allListings, 'No active listings match these filters.');
+    }
+
+    function refreshDebounced() {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function () {
+        debounceTimer = null;
+        refresh();
+      }, 500);
     }
 
     if (typeEl) typeEl.addEventListener('change', function () {
@@ -125,20 +137,37 @@
       _filters.minBeds = parseInt(bedsEl.value, 10) || 0;
       refresh();
     });
+    if (bathsEl) bathsEl.addEventListener('change', function () {
+      _filters.minBaths = parseInt(bathsEl.value, 10) || 0;
+      refresh();
+    });
+    // Price inputs: debounced on every keystroke (so typing "800000" doesn't
+    // momentarily filter against maxPrice=8, then 80, then 800...), plus an
+    // immediate apply on blur/Enter so leaving the field never leaves a
+    // pending, not-yet-applied value.
     if (minEl) minEl.addEventListener('input', function () {
       var v = parsePriceInput(minEl.value);
       _filters.minPrice = v === null ? 0 : v;
-      refresh();
+      refreshDebounced();
     });
     if (maxEl) maxEl.addEventListener('input', function () {
       var v = parsePriceInput(maxEl.value);
       _filters.maxPrice = v === null ? Infinity : v;
-      refresh();
+      refreshDebounced();
+    });
+    [minEl, maxEl].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('blur', function () { if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; refresh(); } });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; } refresh(); el.blur(); }
+      });
     });
     if (resetEl) resetEl.addEventListener('click', function () {
-      _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0 };
+      if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
+      _filters = { type: 'all', minPrice: 0, maxPrice: Infinity, minBeds: 0, minBaths: 0 };
       if (typeEl) typeEl.value = 'all';
       if (bedsEl) bedsEl.value = '0';
+      if (bathsEl) bathsEl.value = '0';
       if (minEl) minEl.value = '';
       if (maxEl) maxEl.value = '';
       refresh();
