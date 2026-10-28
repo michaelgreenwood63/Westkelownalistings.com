@@ -2,7 +2,7 @@
 
 Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`West K strata complexs 1.pdf` + `Page 2 west k strata complexs.pdf`), 199 individual active-listing rows deduplicated down to unique buildings/complexes by base street address.
 
-**71 unique strata complexes identified.** This is the master checklist for building out individual complex pages on westkelownalistings.com, following the same real-research-only pattern used on ownlowermission.com, ownglenmore.com, ownacademyway.com, etc. — never invent building names, unit counts, year built, or lease details. If it cannot be verified, leave it out or flag it as unconfirmed.
+**73 unique strata/resort complexes identified** (71 from the original MLS PDF export + 2 added 2026-10-28: Paradise Estates and Boucherie Beach Cottages, both provided directly by Michael as named tourist-commercial STR-exemption properties, not sourced from the MLS export). This is the master checklist for building out individual complex pages on westkelownalistings.com, following the same real-research-only pattern used on ownlowermission.com, ownglenmore.com, ownacademyway.com, etc. — never invent building names, unit counts, year built, or lease details. If it cannot be verified, leave it out or flag it as unconfirmed.
 
 **Columns:** Title = Freehold/Leasehold per MLS data (note: Leasehold here could be WFN land or another land-lease arrangement — confirm which during research, do not assume WFN). # Listings = how many active MLS listings were in the source export for that address (a rough proxy for building size/activity, not a hard unit count). Status = research/build progress.
 
@@ -18,6 +18,7 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 4024 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4026/4034 Pritchard Dr N (Barona Beach) via matching remarks. Freehold. |
 | ✅ Page live | 2754 Cameron Road | Freehold | 1 | `/2754-cameron-road` | No distinct name found. Freehold, rancher + daylight walkout basement, NO age restriction. |
 | ✅ Page live | 4034 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4024/4026 Pritchard Dr N (Barona Beach) via explicit remarks: "1 of only 4 complexes allowing short-term rentals in West Kelowna." Freehold. |
+| ✅ Page live | 2526 Lakeview Cove Road | Unconfirmed | 0 | `/paradise-estates` | Paradise Estates — NOT from the MLS PDF export, provided directly by Michael 2026-10-28 as one of the named tourist-commercial STR-exemption properties. No active MLS listing to verify title type/unit count/amenities against — page built honestly hedged, flagged as unconfirmed on-page. |
 
 ### Shannon Lake (20 complexes)
 
@@ -95,6 +96,7 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 3870 Brown Road | Freehold | 1 | `/monticello-brown-road` | Confirmed Monticello ("Welcome to Monticello!" in remarks) — merged into the existing Monticello page, which now covers 3870 + 3890 Brown Road. |
 | ✅ Page live | 2477 Ingram Road | Freehold | 1 | `/2477-ingram-road` | No distinct marketed name found — described in remarks only as a "well-maintained 55+ adult-oriented complex." Freehold. |
 | ✅ Page live | 3229 Skyview Lane | Leasehold | 1 | `/copper-sky-skyview-lane` | Confirmed Copper Sky Resort per remarks — merged into the existing Copper Sky page. |
+| ✅ Page live | 2549 Boucherie Road | Unconfirmed | 0 | `/boucherie-beach-cottages` | Boucherie Beach Cottages — NOT from the MLS PDF export, provided directly by Michael 2026-10-28 as one of the named tourist-commercial STR-exemption properties. No active MLS listing to verify title type/unit count/amenities against — page built honestly hedged, flagged as unconfirmed on-page. |
 
 ### Westside Road (1 complexes)
 
