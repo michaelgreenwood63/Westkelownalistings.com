@@ -285,6 +285,18 @@ body.menu-open{overflow:hidden}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.75;margin-top:16px;max-width:560px}
 .section-head.center .section-sub{margin-left:auto;margin-right:auto}
 
+/* ---------- Strata complex cards (directory page + neighbourhood cross-links) ---------- */
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:40px}
+.sc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 22px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
+.sc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.sc-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.sc-card-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink);line-height:1.3}
+.sc-badge{flex-shrink:0;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.sc-badge-leasehold{background:rgba(198,144,63,.14);color:var(--gold-dark)}
+.sc-badge-freehold{background:var(--cream-deep);color:var(--ink-soft)}
+.sc-card-addr{font-size:13px;color:var(--muted)}
+.sc-card-arrow{font-size:12.5px;font-weight:700;color:var(--gold-dark);margin-top:auto;padding-top:6px}
+
 /* ---------- Neighbourhood area map ---------- */
 .area-map{
   height:460px;margin-top:40px;border-radius:var(--radius);overflow:hidden;
