@@ -513,3 +513,9 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px clamp(20px,
   .hero{padding:100px 0 260px}
   .hero-stats{flex-direction:column;gap:14px}
 }
+@media (max-width:400px){
+  /* auto-fill + minmax(Npx,1fr) can overflow a viewport narrower than N
+     (e.g. 320px devices) since grid won't shrink tracks below the stated
+     minimum on its own — force a single column below this width instead. */
+  .listing-grid,.area-grid,.sc-grid{grid-template-columns:1fr}
+}
