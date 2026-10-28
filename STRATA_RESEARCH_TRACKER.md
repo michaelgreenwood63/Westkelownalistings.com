@@ -10,11 +10,11 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ✅ Page live | 2760 Olalla Road | Freehold | 9 | `/2760-olalla-road` | Combined with 2780 Olalla Road as one dev: "The Residences at Lakeview Village" (`/residences-at-lakeview-village`), 14 live listings matched |
-| ✅ Page live | 2780 Olalla Road | Freehold | 5 | `/2780-olalla-road` | See 2760 Olalla Road — same page, "The Residences at Lakeview Village" |
-| ✅ Page live | 2100 Campbell Place | Leasehold | 3 | `/2100-campbell-place` | Shelter Bay. Leasehold per MLS but NOT confirmed WFN (Lakeview Heights isn't WFN reserve land) — flagged as unconfirmed lease arrangement on page |
-| ✅ Page live | 2777 Casa Loma Road | Freehold | 2 | `/2777-casa-loma-road` | Casa Loma Lakeshore Resort — confirmed 47 suites, hotel zoning, boat slips, backs onto a provincial park (unnamed/unconfirmed which one) |
-| ✅ Page live | 4026 Pritchard Drive N | Freehold | 2 | `/4026-pritchard-drive-n` | Barona Beach — confirmed pool/hot tub/gym/dock/beach |
+| ✅ Page live | 2760 Olalla Road | Freehold | 9 | `/residences-at-lakeview-village` | Combined with 2780 Olalla Road as one dev: "The Residences at Lakeview Village", 14 live listings matched |
+| ✅ Page live | 2780 Olalla Road | Freehold | 5 | `/residences-at-lakeview-village` | See 2760 Olalla Road — same page, "The Residences at Lakeview Village" |
+| ✅ Page live | 2100 Campbell Place | Leasehold | 3 | `/shelter-bay` | Shelter Bay. Leasehold per MLS but NOT confirmed WFN (Lakeview Heights isn't WFN reserve land) — flagged as unconfirmed lease arrangement on page |
+| ✅ Page live | 2777 Casa Loma Road | Freehold | 2 | `/casa-loma-lakeshore-resort` | Casa Loma Lakeshore Resort — confirmed 47 suites, hotel zoning, boat slips, backs onto a provincial park (unnamed/unconfirmed which one) |
+| ✅ Page live | 4026 Pritchard Drive N | Freehold | 2 | `/barona-beach` | Barona Beach — confirmed pool/hot tub/gym/dock/beach |
 | ✅ Page live | 4024 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4026/4034 Pritchard Dr N (Barona Beach) via matching remarks. Freehold. |
 | ✅ Page live | 2754 Cameron Road | Freehold | 1 | `/2754-cameron-road` | No distinct name found. Freehold, rancher + daylight walkout basement, NO age restriction. |
 | ✅ Page live | 4034 Pritchard Drive | Freehold | 1 | `/barona-beach` | Confirmed same complex as 4024/4026 Pritchard Dr N (Barona Beach) via explicit remarks: "1 of only 4 complexes allowing short-term rentals in West Kelowna." Freehold. |
@@ -23,11 +23,11 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
-| ✅ Page live | 2735 Shannon Lake Road | Freehold | 5 | `/2735-shannon-lake-road` | West 61, new townhome community by the golf course/regional park |
-| ✅ Page live | 2490 Tuscany Drive | Freehold | 4 | `/2490-tuscany-drive` | ERA — townhomes backing onto golf course, one unit confirmed built 2016 |
+| ✅ Page live | 2735 Shannon Lake Road | Freehold | 5 | `/west-61` | West 61, new townhome community by the golf course/regional park |
+| ✅ Page live | 2490 Tuscany Drive | Freehold | 4 | `/era-shannon-lake` | ERA — townhomes backing onto golf course, one unit confirmed built 2016 |
 | ✅ Page live | 2120 Shannon Ridge Drive | Freehold | 4 | `/2120-shannon-ridge-drive` | No distinct marketed name found — generic "Shannon Lake condo" in listings. Fitness room + guest suite confirmed. |
-| ✅ Page live | 2509 Paramount Peak Drive | Freehold | 3 | `/2509-paramount-peak-drive` | Paramount Peak at Tallus Ridge — new-build freehold, "Redtail" floor plan confirmed |
-| ✅ Page live | 1990 Upper Sundance Drive | Freehold | 3 | `/1990-upper-sundance-drive` | Sundance Ridge — confirmed outdoor pool/hot tub |
+| ✅ Page live | 2509 Paramount Peak Drive | Freehold | 3 | `/paramount-peak` | Paramount Peak at Tallus Ridge — new-build freehold, "Redtail" floor plan confirmed |
+| ✅ Page live | 1990 Upper Sundance Drive | Freehold | 3 | `/sundance-ridge` | Sundance Ridge — confirmed outdoor pool/hot tub |
 | ✅ Page live | 2470 Tuscany Drive | Freehold | 2 | `/eagle-terrace-tuscany-drive` | Real name confirmed: Eagle Terrace. Overlooks Shannon Lake Golf Course, marketed to downsizers. |
 | ✅ Page live | 2780 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Terravita — gated community beside Shannon Lake Golf Course. Combined with 2760+2770 Auburn Road, same complex, 3 civic addresses confirmed via matching MLS remarks. |
 | ✅ Page live | 2770 Auburn Road | Freehold | 2 | `/terravita-auburn-road` | Same complex as 2780/2760 Auburn Road — see that row. Terravita. |

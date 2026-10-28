@@ -52,6 +52,7 @@
 
   var PAGES = {
     '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold', '/zoning': 'Zoning Guide',
+    '/strata-complexes': 'Strata Complexes',
     '/glenrosa': 'Glenrosa', '/shannon-lake': 'Shannon Lake', '/smith-creek': 'Smith Creek',
     '/lakeview-heights': 'Lakeview Heights', '/westbank-centre': 'Westbank Centre',
     '/west-kelowna-estates': 'West Kelowna Estates', '/westside-road': 'Westside Road',
