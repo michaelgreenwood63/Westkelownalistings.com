@@ -52,7 +52,7 @@
 
   var PAGES = {
     '/contact': 'Contact', '/team': 'Our Team', '/wfn-leasehold': 'WFN Leasehold', '/zoning': 'Zoning Guide',
-    '/strata-complexes': 'Strata Complexes',
+    '/strata-complexes': 'Strata Complexes', '/investors': 'Investors',
     '/glenrosa': 'Glenrosa', '/shannon-lake': 'Shannon Lake', '/smith-creek': 'Smith Creek',
     '/lakeview-heights': 'Lakeview Heights', '/westbank-centre': 'Westbank Centre',
     '/west-kelowna-estates': 'West Kelowna Estates', '/westside-road': 'Westside Road',
@@ -203,6 +203,12 @@
       ['Can I build both a secondary suite and a carriage house on the same lot?', 'Generally no on their own, but the density tables for R1, R1L, RP1, RC1, RC2, and RC3 do permit a configuration of up to 4 dwelling units per parcel (on lots larger than 280 m²) combining a principal dwelling, a secondary suite, and a carriage house. The exact permitted combination depends on the zone and parcel specifics, confirm with the City or a qualified professional before planning a project around it.'],
       ['Do I need a rezoning application to add a suite or carriage house?', 'Generally no, when the use is already listed as a principal or secondary use in your zone and meets the regulations table (minimum parcel size, setbacks, height, servicing). A building permit is still required. Confirm specifics with the City\'s Building and Planning Department before starting work.'],
       ['Can I legally run an Airbnb in West Kelowna?', 'Only under the conditions in Section 3.19: you must be an owner who is also a principal resident, present overnight during the stay, with a maximum of one short-term rental use per parcel, up to four bedrooms, and no more than two adults per bedroom. This is separate from, and in addition to, BC\'s provincial short-term rental legislation.']
+    ],
+    '/investors': [
+      ['Can I buy a condo in West Kelowna and run it as an Airbnb without living there?', 'Generally no, under the City\'s own zoning bylaw, which requires the operator to be an owner-occupier present overnight during the stay. A small number of specifically-zoned complexes, like Barona Beach, are a genuine exception. Always confirm a specific parcel\'s zoning and the building\'s own strata bylaws before assuming.'],
+      ['Is leasehold property a good investment?', 'It depends on what you\'re underwriting. Leasehold typically means a lower entry price, but financing, resale pool, and long-term value all depend on how much lease term remains and the specific terms of that community\'s ground lease. See the full WFN Leasehold Guide for the details that actually matter.'],
+      ['Does the foreign buyer tax apply in West Kelowna?', 'Yes. West Kelowna falls within the Central Okanagan Regional District, a designated Additional Property Transfer Tax area, meaning a 20% surtax applies on top of standard Property Transfer Tax for foreign nationals, foreign corporations, and taxable trustees.'],
+      ['Where can I see what\'s currently for sale or in presale?', 'Browse every strata complex we\'ve researched, each with its own page and live MLS® listings, or talk to our team directly for off-market and pre-construction opportunities before they hit MLS®.']
     ]
   };
 
