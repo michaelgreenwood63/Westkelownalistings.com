@@ -69,6 +69,7 @@
     var target = parseFloat(el.getAttribute('data-count'));
     var suffix = el.getAttribute('data-suffix') || '';
     var decimals = el.getAttribute('data-decimals') ? parseInt(el.getAttribute('data-decimals'), 10) : 0;
+    var noComma = el.hasAttribute('data-no-comma');
     var duration = 1600;
     var start = null;
 
@@ -77,7 +78,8 @@
       var progress = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
       var value = target * eased;
-      el.textContent = (decimals ? value.toFixed(decimals) : Math.round(value).toLocaleString()) + suffix;
+      var rounded = Math.round(value);
+      el.textContent = (decimals ? value.toFixed(decimals) : (noComma ? String(rounded) : rounded.toLocaleString())) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
