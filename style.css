@@ -504,13 +504,21 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px clamp(20px,
 @media (max-width:860px){
   .split{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr;gap:36px}
-  .hero{padding:110px 0 220px}
-  .hero-stats{gap:18px 28px;padding:20px clamp(20px,6vw,80px)}
+  /* .hero-stats is position:absolute on desktop (pinned to the bottom of
+     a 100vh hero) so it can overlay the background without pushing
+     content. On mobile that stopped working: a wrapped multi-line
+     headline can grow the centered content block taller than the space
+     the fixed bottom padding reserved, crowding the CTA button right up
+     against (or under) the stats bar. Switch to normal flow instead —
+     stats render after the content, full stop, no overlap possible
+     regardless of how tall the headline wraps. */
+  .hero{display:block;min-height:0;padding:110px 0 0}
+  .hero-inner{padding-bottom:56px}
+  .hero-stats{position:static;gap:18px 28px;padding:20px clamp(20px,6vw,80px)}
 }
 @media (max-width:520px){
   .footer-top{grid-template-columns:1fr}
   .lead-row{flex-direction:column}
-  .hero{padding:100px 0 260px}
   .hero-stats{flex-direction:column;gap:14px}
 }
 @media (max-width:400px){
