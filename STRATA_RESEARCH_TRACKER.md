@@ -2,7 +2,9 @@
 
 Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`West K strata complexs 1.pdf` + `Page 2 west k strata complexs.pdf`), 199 individual active-listing rows deduplicated down to unique buildings/complexes by base street address.
 
-**75 unique strata/resort complexes identified** (71 from the original MLS PDF export + 2 added 2026-10-28: Paradise Estates and Boucherie Beach Cottages, both provided directly by Michael as named tourist-commercial STR-exemption properties + 2 added 2026-10-29: Knights View Estates and The Pointe, found via a live-DDF scan of all 647 active West Kelowna listings cross-referenced against this tracker — see note below). This is the master checklist for building out individual complex pages on westkelownalistings.com, following the same real-research-only pattern used on ownlowermission.com, ownglenmore.com, ownacademyway.com, etc. — never invent building names, unit counts, year built, or lease details. If it cannot be verified, leave it out or flag it as unconfirmed.
+**77 unique strata/resort complexes identified** (71 from the original MLS PDF export + 2 added 2026-10-28: Paradise Estates and Boucherie Beach Cottages, both provided directly by Michael as named tourist-commercial STR-exemption properties + 2 added 2026-10-29: Knights View Estates and The Pointe + 2 added 2026-11-03: Rosevale Estates and Shorerise, all found via live-DDF scans cross-referenced against this tracker — see notes below). This is the master checklist for building out individual complex pages on westkelownalistings.com, following the same real-research-only pattern used on ownlowermission.com, ownglenmore.com, ownacademyway.com, etc. — never invent building names, unit counts, year built, or lease details. If it cannot be verified, leave it out or flag it as unconfirmed.
+
+**2026-11-03 live-DDF scan note:** pulled all 622 currently-active West Kelowna listings via `/api/listings`, grouped by directional-normalized civic address, diffed against the full tracker. Most untracked addresses with 3+ listings were manufactured home parks (Crystal Springs, Pinewood Villa, Paradise MHP, Westgate MHP) or a court-ordered single-unit manufactured home sale — all correctly out of scope for this site, belonging to kelownamanufactured.com. A cluster of 4 addresses on Kyle Road turned out to be commercial/industrial strata units (Kyle Road Business Park, I1-zoned) — not residential, out of scope for this directory. One raw 17.5-acre lakefront development-opportunity listing (2211 Campbell Road, $16.5M) and one single custom-home listing (830 Westview Way) were not complexes. Two genuine new freehold lot communities were found and built: Rosevale Estates (1179 Westside Road, 15 FireSmart-designed homesites, Phase One) and Shorerise (4055 Sand Glass Court, builder-tied custom-home lots with Richmond Custom Homes). The 3 previously-blocked rows were rechecked against the same live pull — all 3 still have zero active listings, unchanged.
 
 **2026-10-29 live-DDF scan note:** pulled all 647 currently-active West Kelowna listings via `/api/listings`, grouped by civic address, and diffed against every address already in this tracker. Most addresses with 3+ listings not already tracked turned out to be manufactured home parks (Sierras Westside, Crystal Springs, Pinewood Villa, Westview Village, Paradise Mobile Home Park, plus unnamed/generic manufactured-home addresses) — those belong to kelownamanufactured.com's park directory, not this site's strata-complexes page, so they were deliberately skipped here. Two genuine new non-manufactured-home strata/lot communities were found and built: Knights View Estates (bare-land strata lots) and The Pointe (freehold 55+ gated community). The 3 previously-blocked rows were also rechecked against the same live pull — all 3 still have zero active listings, unchanged.
 
@@ -56,7 +58,7 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 1870 Rosealee Lane | Freehold | 1 | `/kara-vista-rosealee-lane` | Real name confirmed: Kara Vista. Freehold, hillside, designed around natural landscape. |
 | ✅ Page live | 1451 Rose Meadow Drive | Freehold | 1 | `/1451-rose-meadow-drive` | No distinct name found. Freehold, end-unit townhome. |
 
-### Westbank Centre (39 complexes)
+### Westbank Centre (40 complexes)
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
@@ -100,13 +102,15 @@ Source: MLS "Property Agent Single Line" exports Michael provided 2026-10-27 (`W
 | ✅ Page live | 3229 Skyview Lane | Leasehold | 1 | `/copper-sky-skyview-lane` | Confirmed Copper Sky Resort per remarks — merged into the existing Copper Sky page. |
 | ✅ Page live | 2549 Boucherie Road | Unconfirmed | 0 | `/boucherie-beach-cottages` | Boucherie Beach Cottages — NOT from the MLS PDF export, provided directly by Michael 2026-10-28 as one of the named tourist-commercial STR-exemption properties. No active MLS listing to verify title type/unit count/amenities against — page built honestly hedged, flagged as unconfirmed on-page. |
 | ✅ Page live | 4074 Gellatly Road | Freehold | 3 | `/the-pointe-gellatly-road` | The Pointe — found via 2026-10-29 live-DDF scan, not the original PDF export. Real name confirmed via remarks ("Welcome to The Pointe", "this much-loved gated 55+ community"). Freehold, NO lease payments explicitly stated. Confirmed amenities: indoor heated pool, library, exercise room, billiards room, hall w/ kitchen, outdoor BBQ, active clubhouse social calendar. Homes are detached walk-out ranchers, not condo units. |
+| ✅ Page live | 4055 Sand Glass Court | Freehold | 2 | `/shorerise` | Shorerise — found via 2026-11-03 live-DDF scan. Real name confirmed via remarks. Builder-tied custom-home lot community (Richmond Custom Homes) — not a conventional strata corporation. GST applies on new construction per listings. |
 
-### Westside Road (2 complexes)
+### Westside Road (3 complexes)
 
 | Status | Address | Title | # Listings | Page URL | Notes |
 |---|---|---|---|---|---|
 | ⚠️ Blocked | 4215 Westside Road | Freehold | 1 | `/4215-westside-road` | Zero active listings currently (sold since original MLS export snapshot) and no PublicRemarks available to research from. Revisit if a new listing appears. |
 | ✅ Page live | 1045 Bear Creek Lane | Freehold | 4 | `/knights-view-estates` | Knights View Estates — found via 2026-10-29 live-DDF scan, not the original PDF export. Real name confirmed via remarks ("Welcome to Knights View Estates"). Gated bare-land strata of 9 estate lots, each min. ~2.48 acres, freehold (not leasehold), serviced (water/electrical/gas/cable), accessed via paved private strata road. This is land for sale, not completed homes — buyers build to design guidelines. |
+| ✅ Page live | 1179 Westside Road | Freehold | 2 | `/rosevale-estates` | Rosevale Estates — found via 2026-11-03 live-DDF scan. Real name confirmed via remarks ("Discover legacy lakeside living at Rosevale Estates"). Freehold lot community, 15 homesites in Phase One, fully serviced, FireSmart design standard. Land for sale, not completed homes. Registered ownership structure (standard freehold vs. bare-land strata) not independently confirmed beyond "freehold" in listing data. |
 
 ---
 
